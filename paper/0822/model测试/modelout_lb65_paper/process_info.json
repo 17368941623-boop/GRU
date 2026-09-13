@@ -1,0 +1,8 @@
+﻿{
+    "python":  "D:\\conda\\envs\\pytorch\\python.exe",
+    "pid":  35400,
+    "results_dir":  "C:\\Users\\Administrator\\Desktop\\论文20260708\\0822\\model测试\\modelout_lb65_paper",
+    "runner":  "C:\\Users\\Administrator\\Desktop\\论文20260708\\0822\\model测试\\run_lb65_paper_study.py",
+    "expected_training_runs":  70,
+    "started_local_time":  "2026-09-03 00:46:06"
+}

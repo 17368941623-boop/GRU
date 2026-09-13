@@ -1,0 +1,55 @@
+{
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "test_file": "test_full_clean.pkl",
+  "predict_steps": 15,
+  "predict_seconds": 150.0,
+  "stored_label": "Future_Thv_15step",
+  "future_control_alignment": "u(t)..u(t+14)",
+  "window_coordinate": "inclusive source_row_index at forecast origin t",
+  "window_start": 0,
+  "window_end": 7300,
+  "window_metrics": {
+    "mae_k": 0.51046472980119,
+    "rmse_k": 1.515281168998374,
+    "p95_absolute_error_k": 2.1970233234092005,
+    "max_absolute_error_k": 21.05450687399047,
+    "bias_k": 0.01467937287060688,
+    "r2": 0.9969631189538235,
+    "n_windows": 7138
+  },
+  "rapid_subset_definition": "Delta_Thv_15 <= frozen training threshold -0.584162676784 K",
+  "rapid_window_metrics": {
+    "mae_k": 1.8707999865679585,
+    "rmse_k": 4.029313494645873,
+    "p95_absolute_error_k": 7.7667885844819144,
+    "max_absolute_error_k": 21.05450687399047,
+    "bias_k": 0.32266017639014255,
+    "r2": 0.9817807747979148,
+    "n_windows": 695
+  },
+  "persistence_window_metrics": {
+    "mae_k": 0.8084114180379285,
+    "rmse_k": 2.4170365865862475,
+    "p95_absolute_error_k": 4.524806213378865,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.006504432264580736,
+    "r2": 0.9922730557728379,
+    "n_windows": 7138
+  },
+  "rapid_persistence_window_metrics": {
+    "mae_k": 3.764511928973607,
+    "rmse_k": 6.448109549743706,
+    "p95_absolute_error_k": 15.390583229064903,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": 3.764511928973607,
+    "r2": 0.9533413034815855,
+    "n_windows": 695
+  },
+  "window_direction_accuracy": 0.5631829644158027,
+  "rapid_window_direction_accuracy": 0.8820143884892087,
+  "used_for_gradient_updates": false,
+  "used_for_early_stopping": false,
+  "used_for_checkpoint_selection": false,
+  "intended_role": "secondary fixed-window test diagnostic"
+}

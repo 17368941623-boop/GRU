@@ -1,0 +1,12 @@
+{
+  "status": "stopped_by_user",
+  "completed_training_runs": 21,
+  "total_training_runs": 70,
+  "fraction_complete": 0.3,
+  "current_run": null,
+  "elapsed_seconds": 45100.89107942581,
+  "mean_seconds_per_completed_run": 2147.6614799726576,
+  "updated_local_time": "2026-09-03 18:35:00",
+  "test_data_read": false,
+  "note": "Pipeline and active child training process were stopped; 21 completed runs are preserved."
+}

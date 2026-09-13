@@ -1,0 +1,21 @@
+{
+  "selection_file": "/Users/xfel/Desktop/0830/0829/model测试/outputs/development/horizon_15/lookback_60/selected_configs.json",
+  "selection_split": "Original 260501",
+  "selection_primary_metric": "rapid validation RMSE",
+  "lookback": 60,
+  "common_origin_lookback": 60,
+  "test_split": "Original 0715-BACK",
+  "test_opened_only_after_selected_configs_json": true,
+  "test_used_to_change_configuration": false,
+  "test_used_to_rank_summary": false,
+  "final_seeds": [
+    42,
+    62,
+    82
+  ],
+  "full_test_windows_are_reported": true,
+  "fixed_test_source_window": [
+    0,
+    7300
+  ]
+}
