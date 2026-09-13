@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "serial_kan_gnn_gru",
+    "model_label": "Serial monotonic-KAN-GNN-GRU",
+    "model_description": "Monotonic valve-KAN directed DAG snapshots, then GRU",
+    "paper_role": "serial directed topology with monotonic KAN valve gates",
+    "config_id": "controlled_hh64_gh64_gs2_kan8",
+    "seed": 102,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 2.0819933244828706,
+    "test_full_mae_k": 0.7521026302052197,
+    "test_full_p95_absolute_error_k": 4.257659130243605,
+    "test_full_max_absolute_error_k": 28.895188036209493,
+    "test_full_bias_k": 0.0066164623168703226,
+    "test_full_r2": 0.9933010369376271,
+    "test_direction_accuracy": 0.5417018482033962,
+    "test_delta_rmse_k": 2.0819933244828706,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.18389063978917178,
+    "trainable_parameters": 91545,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.7521026302052197,
+    "rmse_k": 2.0819933244828706,
+    "p95_absolute_error_k": 4.257659130243605,
+    "max_absolute_error_k": 28.895188036209493,
+    "bias_k": 0.0066164623168703226,
+    "r2": 0.9933010369376271,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 0.7521026302052198,
+    "rmse_k": 2.0819933244828706,
+    "p95_absolute_error_k": 4.25765913024361,
+    "max_absolute_error_k": 28.895188036209493,
+    "bias_k": 0.006616462316870328,
+    "r2": -0.10786136156428094,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

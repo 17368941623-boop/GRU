@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "parallel_gru_mlp_gnn",
+    "model_label": "Parallel GRU-MLP-GNN",
+    "model_description": "Flat GRU parallel with current-snapshot edge-MLP DAG",
+    "paper_role": "parallel directed topology with unconstrained MLP edge gates",
+    "config_id": "controlled_hh64_gh64_gs2_mlp",
+    "seed": 112,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 1.192249459041971,
+    "test_full_mae_k": 0.31686563411866187,
+    "test_full_p95_absolute_error_k": 1.1575453271650877,
+    "test_full_max_absolute_error_k": 23.15802355723098,
+    "test_full_bias_k": -0.035313522449536554,
+    "test_full_r2": 0.9978032370976244,
+    "test_direction_accuracy": 0.704287456609438,
+    "test_delta_rmse_k": 1.192249459041971,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.19049907461184432,
+    "trainable_parameters": 87059,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.31686563411866187,
+    "rmse_k": 1.192249459041971,
+    "p95_absolute_error_k": 1.1575453271650877,
+    "max_absolute_error_k": 23.15802355723098,
+    "bias_k": -0.035313522449536554,
+    "r2": 0.9978032370976244,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 0.3168656341186618,
+    "rmse_k": 1.192249459041971,
+    "p95_absolute_error_k": 1.1575453271650895,
+    "max_absolute_error_k": 23.15802355723098,
+    "bias_k": -0.035313522449536575,
+    "r2": 0.6367036633282138,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

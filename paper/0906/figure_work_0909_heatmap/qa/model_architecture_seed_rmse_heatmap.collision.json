@@ -1,0 +1,23 @@
+{
+  "pdf": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0906\\figure_work_0909_heatmap\\deliverables\\model_architecture_seed_rmse_heatmap.pdf",
+  "auditable": true,
+  "verdict": "PASS",
+  "page_count": 1,
+  "visible_text_box_count": 109,
+  "text_trace_count": 109,
+  "stroke_path_count": 30,
+  "filled_region_count": 10,
+  "image_region_count": 2,
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": []
+}

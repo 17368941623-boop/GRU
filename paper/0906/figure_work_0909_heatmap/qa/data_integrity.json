@@ -1,0 +1,48 @@
+{
+  "figure": "model_architecture_seed_rmse_heatmap",
+  "metric": "test_full_rmse_k",
+  "rows": 80,
+  "models": [
+    "gru_baseline",
+    "lstm_baseline",
+    "parallel_gru_mlp_gnn",
+    "parallel_gru_kan_gnn",
+    "parallel_lstm_mlp_gnn",
+    "parallel_lstm_kan_gnn",
+    "serial_mlp_gnn_gru",
+    "serial_kan_gnn_gru"
+  ],
+  "seed_order": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "model_seed_counts": {
+    "gru_baseline": 10,
+    "lstm_baseline": 10,
+    "parallel_gru_mlp_gnn": 10,
+    "parallel_gru_kan_gnn": 10,
+    "parallel_lstm_mlp_gnn": 10,
+    "parallel_lstm_kan_gnn": 10,
+    "serial_mlp_gnn_gru": 10,
+    "serial_kan_gnn_gru": 10
+  },
+  "lookback": 60,
+  "predict_steps": 15,
+  "test_windows": 10659,
+  "missing_cells": 0,
+  "missing_rule": "No missing cells; every retained architecture has ten seeds.",
+  "color_norm": {
+    "type": "Normalize",
+    "vmin": 1.0323140554411614,
+    "vmax": 4.589997274040132,
+    "cmap": "magma_r truncated to [0.08, 0.72] to avoid near-black saturation"
+  }
+}

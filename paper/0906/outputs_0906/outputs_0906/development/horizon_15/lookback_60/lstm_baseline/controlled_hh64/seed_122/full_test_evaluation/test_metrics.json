@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "lstm_baseline",
+    "model_label": "LSTM baseline",
+    "model_description": "Flat historical LSTM plus known-future-control encoder",
+    "paper_role": "recurrent temporal-encoder comparator",
+    "config_id": "controlled_hh64",
+    "seed": 122,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 1.2696025555841415,
+    "test_full_mae_k": 0.3496251802906511,
+    "test_full_p95_absolute_error_k": 1.443459745664476,
+    "test_full_max_absolute_error_k": 21.323241447464184,
+    "test_full_bias_k": -0.015344590890278436,
+    "test_full_r2": 0.9975089382477917,
+    "test_direction_accuracy": 0.5215311004784688,
+    "test_delta_rmse_k": 1.2696025555841415,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.2687217776060028,
+    "trainable_parameters": 32161,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.3496251802906511,
+    "rmse_k": 1.2696025555841415,
+    "p95_absolute_error_k": 1.443459745664476,
+    "max_absolute_error_k": 21.323241447464184,
+    "bias_k": -0.015344590890278436,
+    "r2": 0.9975089382477917,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 0.34962518029065115,
+    "rmse_k": 1.2696025555841415,
+    "p95_absolute_error_k": 1.443459745664473,
+    "max_absolute_error_k": 21.323241447464184,
+    "bias_k": -0.015344590890278426,
+    "r2": 0.5880330972351198,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

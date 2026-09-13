@@ -1,0 +1,225 @@
+{
+  "status": "PASS",
+  "completed_runs": 85,
+  "models": 9,
+  "saved_prediction_checks": [
+    {
+      "model": "gru_baseline",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.168597160074331
+    },
+    {
+      "model": "lstm_baseline",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.2322160888893245
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.179282423572391
+    },
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.2076472017179123
+    },
+    {
+      "model": "parallel_lstm_kan_gnn",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.1472988721075306
+    },
+    {
+      "model": "parallel_lstm_mlp_gnn",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.128692704133725
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 2.1029767029160475
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 2.1188933735242728
+    },
+    {
+      "model": "tcn_baseline",
+      "seed": 42,
+      "n": 10659,
+      "recomputed_rmse_k": 1.3379901863077404
+    }
+  ],
+  "scaler_array_signatures": 1,
+  "summary": [
+    {
+      "model": "gru_baseline",
+      "n": 10,
+      "test_mean": 1.1762880002101408,
+      "test_sd": 0.03266261317861794,
+      "validation_mean": 0.20214904886682533,
+      "min_seed_rmse": 1.1291828105316777,
+      "max_seed_rmse": 1.2348566251812148
+    },
+    {
+      "model": "lstm_baseline",
+      "n": 10,
+      "test_mean": 1.1928445914653205,
+      "test_sd": 0.04759522075142273,
+      "validation_mean": 0.23513342495041956,
+      "min_seed_rmse": 1.1127717187380963,
+      "max_seed_rmse": 1.2696025555841417
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "n": 10,
+      "test_mean": 1.1498611034308304,
+      "test_sd": 0.043801477524459446,
+      "validation_mean": 0.2002823136354413,
+      "min_seed_rmse": 1.0797136768945834,
+      "max_seed_rmse": 1.2282997442664922
+    },
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "n": 10,
+      "test_mean": 1.141923520199758,
+      "test_sd": 0.04946534483254139,
+      "validation_mean": 0.19578697156743285,
+      "min_seed_rmse": 1.0323140554411614,
+      "max_seed_rmse": 1.207647201717912
+    },
+    {
+      "model": "parallel_lstm_kan_gnn",
+      "n": 10,
+      "test_mean": 1.1519478825506853,
+      "test_sd": 0.05268463115355478,
+      "validation_mean": 0.21848283446233063,
+      "min_seed_rmse": 1.071440850026825,
+      "max_seed_rmse": 1.2509327957027534
+    },
+    {
+      "model": "parallel_lstm_mlp_gnn",
+      "n": 10,
+      "test_mean": 1.1451069640685767,
+      "test_sd": 0.06221738236717105,
+      "validation_mean": 0.22324148084881218,
+      "min_seed_rmse": 1.0560299010919112,
+      "max_seed_rmse": 1.2343386311500288
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "n": 10,
+      "test_mean": 2.1536034218515043,
+      "test_sd": 0.19253242445949642,
+      "validation_mean": 0.18868770097611323,
+      "min_seed_rmse": 1.9948102888358008,
+      "max_seed_rmse": 2.6542596688941065
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "n": 10,
+      "test_mean": 2.380699170340811,
+      "test_sd": 0.779224191612366,
+      "validation_mean": 0.19145702635100745,
+      "min_seed_rmse": 2.069802822381905,
+      "max_seed_rmse": 4.589997274040132
+    },
+    {
+      "model": "tcn_baseline",
+      "n": 5,
+      "test_mean": 1.3350012818946593,
+      "test_sd": 0.06626265351586899,
+      "validation_mean": 0.20571892522354146,
+      "min_seed_rmse": 1.2472427572198237,
+      "max_seed_rmse": 1.433742421734341
+    }
+  ],
+  "paired_vs_gru": [
+    {
+      "model": "lstm_baseline",
+      "n": 10,
+      "mean": 0.016556591255179654,
+      "ci_low": -0.025823923407526535,
+      "ci_high": 0.05893710591788584,
+      "p": 0.4921875,
+      "holm_p": 0.4921875
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "n": 10,
+      "mean": -0.026426896779310337,
+      "ci_low": -0.056939527889065894,
+      "ci_high": 0.004085734330445224,
+      "p": 0.16015625,
+      "holm_p": 0.48046875
+    },
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "n": 10,
+      "mean": -0.03436448001038288,
+      "ci_low": -0.0694556249634019,
+      "ci_high": 0.0007266649426361377,
+      "p": 0.037109375,
+      "holm_p": 0.22265625
+    },
+    {
+      "model": "parallel_lstm_kan_gnn",
+      "n": 10,
+      "mean": -0.02434011765945552,
+      "ci_low": -0.05635434119598483,
+      "ci_high": 0.007674105877073789,
+      "p": 0.232421875,
+      "holm_p": 0.48046875
+    },
+    {
+      "model": "parallel_lstm_mlp_gnn",
+      "n": 10,
+      "mean": -0.03118103614156422,
+      "ci_low": -0.06798600768738354,
+      "ci_high": 0.005623935404255098,
+      "p": 0.083984375,
+      "holm_p": 0.3359375
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "n": 10,
+      "mean": 0.9773154216413633,
+      "ci_low": 0.8424446376946706,
+      "ci_high": 1.112186205588056,
+      "p": 0.001953125,
+      "holm_p": 0.015625
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "n": 10,
+      "mean": 1.2044111701306703,
+      "ci_low": 0.661531137496909,
+      "ci_high": 1.7472912027644316,
+      "p": 0.001953125,
+      "holm_p": 0.015625
+    },
+    {
+      "model": "tcn_baseline",
+      "n": 5,
+      "mean": 0.18030373312268688,
+      "ci_low": 0.08253474812617043,
+      "ci_high": 0.2780727181192033,
+      "p": 0.0625,
+      "holm_p": 0.3125
+    }
+  ],
+  "limitations": [
+    "Export consistency audit, not a complete causal preprocessing or raw-data provenance audit.",
+    "Test run has already informed research choices; it is not a pristine final holdout.",
+    "Seed uncertainty is conditional on one fixed operating run.",
+    "No new training or inference performed."
+  ]
+}

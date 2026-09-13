@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "lstm_baseline",
+    "model_label": "LSTM baseline",
+    "model_description": "Flat historical LSTM plus known-future-control encoder",
+    "paper_role": "recurrent temporal-encoder comparator",
+    "config_id": "controlled_hh64",
+    "seed": 112,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 1.198629899643556,
+    "test_full_mae_k": 0.406151878601007,
+    "test_full_p95_absolute_error_k": 1.539492734076423,
+    "test_full_max_absolute_error_k": 19.097806755576723,
+    "test_full_bias_k": -0.08222364915976468,
+    "test_full_r2": 0.9977796617964076,
+    "test_direction_accuracy": 0.7372173749882728,
+    "test_delta_rmse_k": 1.198629899643556,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.22054090025306877,
+    "trainable_parameters": 32161,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.406151878601007,
+    "rmse_k": 1.198629899643556,
+    "p95_absolute_error_k": 1.539492734076423,
+    "max_absolute_error_k": 19.097806755576723,
+    "bias_k": -0.08222364915976468,
+    "r2": 0.9977796617964076,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 0.406151878601007,
+    "rmse_k": 1.198629899643556,
+    "p95_absolute_error_k": 1.5394927340764184,
+    "max_absolute_error_k": 19.097806755576723,
+    "bias_k": -0.08222364915976468,
+    "r2": 0.632804826289993,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

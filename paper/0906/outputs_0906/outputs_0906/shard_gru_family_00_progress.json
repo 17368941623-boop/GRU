@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "training_group": "gru_family",
+  "shard_index": 0,
+  "num_shards": 3,
+  "completed_in_shard": 17,
+  "total_in_shard": 17,
+  "elapsed_seconds": 52568.70583987236,
+  "current_run": null,
+  "test_data_read": false
+}

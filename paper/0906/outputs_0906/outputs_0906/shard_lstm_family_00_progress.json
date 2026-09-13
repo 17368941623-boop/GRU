@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "training_group": "lstm_family",
+  "shard_index": 0,
+  "num_shards": 2,
+  "completed_in_shard": 18,
+  "total_in_shard": 18,
+  "elapsed_seconds": 16151.32254910469,
+  "current_run": null,
+  "test_data_read": false
+}

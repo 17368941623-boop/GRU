@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "serial_mlp_gnn_gru",
+    "model_label": "Serial MLP-GNN-GRU",
+    "model_description": "Directed edge-MLP DAG snapshots, then GRU",
+    "paper_role": "serial directed topology with unconstrained MLP edge gates",
+    "config_id": "controlled_hh64_gh64_gs2_mlp",
+    "seed": 112,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 4.589997274040132,
+    "test_full_mae_k": 2.374263660096785,
+    "test_full_p95_absolute_error_k": 10.375727179122302,
+    "test_full_max_absolute_error_k": 26.000397081542214,
+    "test_full_bias_k": -1.98987450725094,
+    "test_full_r2": 0.9674407964383787,
+    "test_direction_accuracy": 0.5786659161272164,
+    "test_delta_rmse_k": 4.589997274040132,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.190599932208007,
+    "trainable_parameters": 91411,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 2.374263660096785,
+    "rmse_k": 4.589997274040132,
+    "p95_absolute_error_k": 10.375727179122302,
+    "max_absolute_error_k": 26.000397081542214,
+    "bias_k": -1.98987450725094,
+    "r2": 0.9674407964383787,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 2.374263660096785,
+    "rmse_k": 4.589997274040132,
+    "p95_absolute_error_k": 10.375727179122302,
+    "max_absolute_error_k": 26.000397081542214,
+    "bias_k": -1.98987450725094,
+    "r2": -4.384577173119836,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

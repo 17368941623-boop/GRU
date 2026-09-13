@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "tcn_baseline",
+    "model_label": "TCN baseline",
+    "model_description": "Causal dilated TCN plus known-future-control encoder",
+    "paper_role": "causal TCN comparator with a 127-step receptive field",
+    "config_id": "controlled_hh64_tl6",
+    "seed": 102,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 1.433742421734341,
+    "test_full_mae_k": 0.3930297469734005,
+    "test_full_p95_absolute_error_k": 1.7399287532656569,
+    "test_full_max_absolute_error_k": 26.033254387502645,
+    "test_full_bias_k": -0.016509056104683867,
+    "test_full_r2": 0.9968231903849446,
+    "test_direction_accuracy": 0.4820339619101229,
+    "test_delta_rmse_k": 1.433742421734341,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.19877032201453115,
+    "trainable_parameters": 86369,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.3930297469734005,
+    "rmse_k": 1.433742421734341,
+    "p95_absolute_error_k": 1.7399287532656569,
+    "max_absolute_error_k": 26.033254387502645,
+    "bias_k": -0.016509056104683867,
+    "r2": 0.9968231903849446,
+    "n_windows": 10659
+  },
+  "delta_test_metrics": {
+    "mae_k": 0.3930297469734005,
+    "rmse_k": 1.433742421734341,
+    "p95_absolute_error_k": 1.7399287532656584,
+    "max_absolute_error_k": 26.033254387502645,
+    "bias_k": -0.01650905610468387,
+    "r2": 0.4746254617622706,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

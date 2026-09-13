@@ -1,0 +1,202 @@
+{
+  "study": "0906 final Thv architecture comparison",
+  "target": "Delta Thv at t+15, restored to absolute Thv for metrics",
+  "lookback": 60,
+  "common_origin_lookback": 120,
+  "predict_steps": 15,
+  "history_input": "measurements and controls through current time t",
+  "known_future_control_input": "valve commands u(t) through u(t+14)",
+  "future_measurements_used": false,
+  "training_loss": "weighted Huber; training-defined rapid subset weight=3",
+  "checkpoint_selection_split": "Original 260501 validation only",
+  "checkpoint_selection_metric": "validation_rmse_k",
+  "test_split": "Original 0715-BACK complete forecastable sequence",
+  "test_used_during_training": false,
+  "models": [
+    {
+      "model": "gru_baseline",
+      "label": "GRU baseline",
+      "config_id": "controlled_hh64",
+      "role": "temporal baseline with known-future-control encoder",
+      "training_group": "gru_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "lstm_baseline",
+      "label": "LSTM baseline",
+      "config_id": "controlled_hh64",
+      "role": "recurrent temporal-encoder comparator",
+      "training_group": "lstm_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "tcn_baseline",
+      "label": "TCN baseline",
+      "config_id": "controlled_hh64_tl6",
+      "role": "causal TCN comparator with a 127-step receptive field",
+      "training_group": "lstm_family",
+      "seeds": [
+        42,
+        62,
+        82,
+        102,
+        122
+      ]
+    },
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "label": "Parallel GRU-MLP-GNN",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "role": "parallel directed topology with unconstrained MLP edge gates",
+      "training_group": "gru_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "label": "Parallel GRU-monotonic-KAN-GNN",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "role": "parallel directed topology with monotonic KAN valve gates",
+      "training_group": "gru_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "parallel_lstm_mlp_gnn",
+      "label": "Parallel LSTM-MLP-GNN",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "role": "parallel LSTM history and directed topology with unconstrained MLP edge gates",
+      "training_group": "lstm_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "parallel_lstm_kan_gnn",
+      "label": "Parallel LSTM-monotonic-KAN-GNN",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "role": "parallel LSTM history and directed topology with monotonic KAN valve gates",
+      "training_group": "lstm_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "label": "Serial MLP-GNN-GRU",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "role": "serial directed topology with unconstrained MLP edge gates",
+      "training_group": "gru_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "label": "Serial monotonic-KAN-GNN-GRU",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "role": "serial directed topology with monotonic KAN valve gates",
+      "training_group": "gru_family",
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ]
+    }
+  ],
+  "common_model_config": {
+    "history_hidden": 64,
+    "graph_hidden": 64,
+    "graph_sweeps": 2,
+    "edge_hidden": 32,
+    "kan_grid": 8,
+    "tcn_levels": 6,
+    "tcn_kernel": 3,
+    "control_hidden": 32,
+    "fusion_hidden": 64,
+    "dropout": 0.1
+  },
+  "expected_runs": 85,
+  "observed_runs": 85,
+  "complete": true,
+  "test_data_read_by_training": false,
+  "primary_ranking_metric": "complete Original 260501 validation RMSE",
+  "uncertainty": "sample SD and two-sided 95% Student-t CI across seeds",
+  "paired_test": "two-sided Wilcoxon signed-rank with within-table Holm correction"
+}

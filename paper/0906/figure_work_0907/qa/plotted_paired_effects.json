@@ -1,0 +1,58 @@
+[
+  {
+    "model": "parallel_gru_mlp_gnn",
+    "n": 10,
+    "mean_difference_k": -0.03436448001038288,
+    "ci95_low_k": -0.0694556249634019,
+    "ci95_high_k": 0.0007266649426361377
+  },
+  {
+    "model": "parallel_lstm_mlp_gnn",
+    "n": 10,
+    "mean_difference_k": -0.03118103614156422,
+    "ci95_low_k": -0.06798600768738354,
+    "ci95_high_k": 0.005623935404255098
+  },
+  {
+    "model": "parallel_gru_kan_gnn",
+    "n": 10,
+    "mean_difference_k": -0.026426896779310337,
+    "ci95_low_k": -0.056939527889065894,
+    "ci95_high_k": 0.004085734330445224
+  },
+  {
+    "model": "parallel_lstm_kan_gnn",
+    "n": 10,
+    "mean_difference_k": -0.02434011765945552,
+    "ci95_low_k": -0.05635434119598483,
+    "ci95_high_k": 0.007674105877073789
+  },
+  {
+    "model": "lstm_baseline",
+    "n": 10,
+    "mean_difference_k": 0.016556591255179654,
+    "ci95_low_k": -0.025823923407526535,
+    "ci95_high_k": 0.05893710591788584
+  },
+  {
+    "model": "tcn_baseline",
+    "n": 5,
+    "mean_difference_k": 0.18030373312268688,
+    "ci95_low_k": 0.08253474812617043,
+    "ci95_high_k": 0.2780727181192033
+  },
+  {
+    "model": "serial_kan_gnn_gru",
+    "n": 10,
+    "mean_difference_k": 0.9773154216413633,
+    "ci95_low_k": 0.8424446376946706,
+    "ci95_high_k": 1.112186205588056
+  },
+  {
+    "model": "serial_mlp_gnn_gru",
+    "n": 10,
+    "mean_difference_k": 1.2044111701306703,
+    "ci95_low_k": 0.661531137496909,
+    "ci95_high_k": 1.7472912027644316
+  }
+]
