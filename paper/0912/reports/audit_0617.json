@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "file": "Original__HTC8300趋势图-260617-ALL.csv",
+  "rows": 22680,
+  "columns": 108,
+  "signal_pairs": 54,
+  "start_time": "2026-06-17 08:00:04",
+  "end_time": "2026-06-19 22:59:54",
+  "duplicate_timestamps": 0,
+  "irregular_10s_intervals": 0,
+  "invalid_timestamps": 0,
+  "cross_signal_timestamp_mismatch_cells": 0,
+  "missing_numeric_cells": 0,
+  "rows_with_missing_numeric": 0,
+  "constant_signal_count_in_0617": 2,
+  "constant_signals_in_0617": [
+    "PT02",
+    "CV8305"
+  ]
+}

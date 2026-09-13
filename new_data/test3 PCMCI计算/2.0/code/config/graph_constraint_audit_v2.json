@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "schema_version": "2.0",
+  "observed_nodes": 54,
+  "logical_nodes_including_H_mix": 55,
+  "compiled_edges": 44,
+  "compiled_cross_edges": 30,
+  "compiled_self_edges": 14,
+  "relation_type_counts": {
+    "hmix_conditioned_edge": 1,
+    "self_memory": 14,
+    "static_physical": 27,
+    "three_branch_kan_governed": 2
+  },
+  "lag_evidence_class_counts": {
+    "difference_primary": 37,
+    "human_approved_targeted_pcmci_consensus": 1,
+    "level_only_sensitivity_support": 1,
+    "physical_prior_only": 5
+  },
+  "optional_pcmci_edges": 32,
+  "static_H_mix_relations_collapsed": 5,
+  "manual_lag_decisions": {
+    "A管_to_Thv_effective_lag_steps": [
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "COOLDOWN_to_Thv_effective_lag_steps": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "EC-V2": "do not assert one hard physical lag; encode current level and learned past-action history",
+    "FC-V1": "do not assert one hard physical lag; encode current level and learned past-action history",
+    "H_mix": "logical virtual state; compile as one A管-to-Thv KAN conditioned edge"
+  },
+  "maximum_generic_lag_steps": 21,
+  "maximum_condition_history_lag_steps": 59,
+  "targeted_pcmci_search_max_lag_steps": 60,
+  "notes": [
+    "PCMCI values are allowed lag pools, not hard-coded single causal delays.",
+    "Physical-prior-only edges remain in the static graph and learn attention inside their approved search window.",
+    "Optional nonphysical PCMCI edges are frozen off unless the A7 ablation is selected."
+  ]
+}

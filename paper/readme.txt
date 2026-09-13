@@ -1,0 +1,3 @@
+gru-new文件夹包括了纯gru训练单步预测，以及纯gru训练多步预测，通过compare_predictions_7000_12000.py文件进行了两者模型的测试，但是发现多步预测的结果反而有些不如单步预测
+model-F-GRU为最初的gru模型，文件夹内包括了模型文件以及模型参数等
+model-F-GRU-ODE为结合ode的改进版本

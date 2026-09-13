@@ -1,0 +1,367 @@
+{
+  "interpretation": "Positive lag means source change precedes Thv change. A peak at the upper boundary is a diagnostic warning, not proof of a physical delay beyond it.",
+  "sample_period_seconds": 10,
+  "max_lag_steps": 60,
+  "max_lag_seconds": 600,
+  "event_threshold_percentage_points": 1.0,
+  "event_quiet_steps": 6,
+  "inference_parent_runs": [
+    "0623-BACK",
+    "251226",
+    "260118"
+  ],
+  "data_audit": {
+    "train_rows_total": 394749,
+    "original_rows_total": 131583,
+    "augmented_rows_ignored": 263166,
+    "finite_segment_rows_used": 131435,
+    "short_or_invalid_rows_ignored": 148,
+    "original_parent_runs": 7,
+    "original_segments": 39
+  },
+  "groups": {
+    "all_parent_runs": {
+      "A管": {
+        "source_leads_peak_steps": 17,
+        "source_leads_peak_seconds": 170,
+        "source_leads_peak_correlation": 0.4081414579660206,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.056992925001177384,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 45,
+        "source_leads_peak_seconds": 450,
+        "source_leads_peak_correlation": 0.15078390920933338,
+        "Thv_leads_peak_steps": -16,
+        "Thv_leads_peak_seconds": -160,
+        "Thv_leads_peak_correlation": 0.0019289425990647409,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.23132599328621342,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.06469625820127063,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 4,
+        "source_leads_peak_seconds": 40,
+        "source_leads_peak_correlation": 0.005719862823715916,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.06384132341811025,
+        "upper_boundary_warning": false
+      }
+    },
+    "pcmci_inference_parent_runs": {
+      "A管": {
+        "source_leads_peak_steps": 16,
+        "source_leads_peak_seconds": 160,
+        "source_leads_peak_correlation": 0.4317965309444046,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.09002592133610368,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 54,
+        "source_leads_peak_seconds": 540,
+        "source_leads_peak_correlation": 0.15743868918389073,
+        "Thv_leads_peak_steps": -5,
+        "Thv_leads_peak_seconds": -50,
+        "Thv_leads_peak_correlation": -0.0022224062974362207,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.262036100815526,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.07636687872395369,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 6,
+        "source_leads_peak_seconds": 60,
+        "source_leads_peak_correlation": 0.004052199476735196,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.07609420516065597,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_0617-ALL": {
+      "A管": {
+        "source_leads_peak_steps": 18,
+        "source_leads_peak_seconds": 180,
+        "source_leads_peak_correlation": 0.49894419714300187,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.05226337859732293,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 28,
+        "source_leads_peak_seconds": 280,
+        "source_leads_peak_correlation": 0.20100906161100068,
+        "Thv_leads_peak_steps": -19,
+        "Thv_leads_peak_seconds": -190,
+        "Thv_leads_peak_correlation": 0.0010293134738809673,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.211811438422707,
+        "Thv_leads_peak_steps": -39,
+        "Thv_leads_peak_seconds": -390,
+        "Thv_leads_peak_correlation": -0.0032957652044091484,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 21,
+        "source_leads_peak_seconds": 210,
+        "source_leads_peak_correlation": 0.011830206827523547,
+        "Thv_leads_peak_steps": -1,
+        "Thv_leads_peak_seconds": -10,
+        "Thv_leads_peak_correlation": 0.009097974234026677,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_0623-BACK": {
+      "A管": {
+        "source_leads_peak_steps": 13,
+        "source_leads_peak_seconds": 130,
+        "source_leads_peak_correlation": 0.3354082132564575,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.18730313360785386,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 25,
+        "source_leads_peak_seconds": 250,
+        "source_leads_peak_correlation": 0.16722407066053835,
+        "Thv_leads_peak_steps": -1,
+        "Thv_leads_peak_seconds": -10,
+        "Thv_leads_peak_correlation": 0.008685063252920245,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.31450500822323046,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.06670413807283913,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 2,
+        "source_leads_peak_seconds": 20,
+        "source_leads_peak_correlation": 0.00045883970753108033,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.08154749341916964,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_0715-ALL": {
+      "A管": {
+        "source_leads_peak_steps": 14,
+        "source_leads_peak_seconds": 140,
+        "source_leads_peak_correlation": 0.5100277437553817,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.07289620655487683,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 44,
+        "source_leads_peak_seconds": 440,
+        "source_leads_peak_correlation": 0.14340538039622908,
+        "Thv_leads_peak_steps": -13,
+        "Thv_leads_peak_seconds": -130,
+        "Thv_leads_peak_correlation": 0.010146796257577112,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 13,
+        "source_leads_peak_seconds": 130,
+        "source_leads_peak_correlation": -0.20643632786210528,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.11278792113080856,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 29,
+        "source_leads_peak_seconds": 290,
+        "source_leads_peak_correlation": -0.015959950225274546,
+        "Thv_leads_peak_steps": -4,
+        "Thv_leads_peak_seconds": -40,
+        "Thv_leads_peak_correlation": -0.018900131117931963,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_251130": {
+      "A管": {
+        "source_leads_peak_steps": 17,
+        "source_leads_peak_seconds": 170,
+        "source_leads_peak_correlation": 0.5526077009936292,
+        "Thv_leads_peak_steps": -30,
+        "Thv_leads_peak_seconds": -300,
+        "Thv_leads_peak_correlation": 0.00950329314510295,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 58,
+        "source_leads_peak_seconds": 580,
+        "source_leads_peak_correlation": 0.11079122781314014,
+        "Thv_leads_peak_steps": -24,
+        "Thv_leads_peak_seconds": -240,
+        "Thv_leads_peak_correlation": 0.0026446390494736004,
+        "upper_boundary_warning": true
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.20244863324274318,
+        "Thv_leads_peak_steps": -50,
+        "Thv_leads_peak_seconds": -500,
+        "Thv_leads_peak_correlation": 0.06786983682291721,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 1,
+        "source_leads_peak_seconds": 10,
+        "source_leads_peak_correlation": 0.007764844176609492,
+        "Thv_leads_peak_steps": -56,
+        "Thv_leads_peak_seconds": -560,
+        "Thv_leads_peak_correlation": -0.11923549836904734,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_251226": {
+      "A管": {
+        "source_leads_peak_steps": 16,
+        "source_leads_peak_seconds": 160,
+        "source_leads_peak_correlation": 0.6659935134427426,
+        "Thv_leads_peak_steps": -54,
+        "Thv_leads_peak_seconds": -540,
+        "Thv_leads_peak_correlation": -0.014293612598163521,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 27,
+        "source_leads_peak_seconds": 270,
+        "source_leads_peak_correlation": 0.15145781098183658,
+        "Thv_leads_peak_steps": -3,
+        "Thv_leads_peak_seconds": -30,
+        "Thv_leads_peak_correlation": -0.0025444969449900856,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 12,
+        "source_leads_peak_seconds": 120,
+        "source_leads_peak_correlation": -0.22628854240238236,
+        "Thv_leads_peak_steps": -53,
+        "Thv_leads_peak_seconds": -530,
+        "Thv_leads_peak_correlation": 0.07933262640326964,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 56,
+        "source_leads_peak_seconds": 560,
+        "source_leads_peak_correlation": 0.009041492284174108,
+        "Thv_leads_peak_steps": -46,
+        "Thv_leads_peak_seconds": -460,
+        "Thv_leads_peak_correlation": -0.0998961635725399,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_260118": {
+      "A管": {
+        "source_leads_peak_steps": 18,
+        "source_leads_peak_seconds": 180,
+        "source_leads_peak_correlation": 0.7446767606561635,
+        "Thv_leads_peak_steps": -40,
+        "Thv_leads_peak_seconds": -400,
+        "Thv_leads_peak_correlation": 0.014095906628925957,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 57,
+        "source_leads_peak_seconds": 570,
+        "source_leads_peak_correlation": 0.19096403201516776,
+        "Thv_leads_peak_steps": -2,
+        "Thv_leads_peak_seconds": -20,
+        "Thv_leads_peak_correlation": -0.0037886490332793717,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 13,
+        "source_leads_peak_seconds": 130,
+        "source_leads_peak_correlation": -0.25196328741632046,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.09157152170218828,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 16,
+        "source_leads_peak_seconds": 160,
+        "source_leads_peak_correlation": -0.0031813313696614004,
+        "Thv_leads_peak_steps": -38,
+        "Thv_leads_peak_seconds": -380,
+        "Thv_leads_peak_correlation": -0.003182805871708625,
+        "upper_boundary_warning": false
+      }
+    },
+    "parent_260403": {
+      "A管": {
+        "source_leads_peak_steps": 20,
+        "source_leads_peak_seconds": 200,
+        "source_leads_peak_correlation": 0.6996605957610107,
+        "Thv_leads_peak_steps": -58,
+        "Thv_leads_peak_seconds": -580,
+        "Thv_leads_peak_correlation": 0.010764472402963887,
+        "upper_boundary_warning": false
+      },
+      "EC-V2": {
+        "source_leads_peak_steps": 55,
+        "source_leads_peak_seconds": 550,
+        "source_leads_peak_correlation": 0.4122709486451418,
+        "Thv_leads_peak_steps": -1,
+        "Thv_leads_peak_seconds": -10,
+        "Thv_leads_peak_correlation": -0.013467339671932881,
+        "upper_boundary_warning": false
+      },
+      "COOLDOWN": {
+        "source_leads_peak_steps": 11,
+        "source_leads_peak_seconds": 110,
+        "source_leads_peak_correlation": -0.24817065626959178,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": 0.07978658193037422,
+        "upper_boundary_warning": false
+      },
+      "FC-V1": {
+        "source_leads_peak_steps": 4,
+        "source_leads_peak_seconds": 40,
+        "source_leads_peak_correlation": 0.010243661793049268,
+        "Thv_leads_peak_steps": -60,
+        "Thv_leads_peak_seconds": -600,
+        "Thv_leads_peak_correlation": -0.09405622526148992,
+        "upper_boundary_warning": false
+      }
+    }
+  },
+  "warning": "Do not convert a boundary MCI lag into a transport delay without agreement from the pooled lead/lag peak, event response, and parent-run stability."
+}

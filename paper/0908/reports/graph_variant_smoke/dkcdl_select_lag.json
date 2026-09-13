@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "name": "Domain-limited PCMCI graph",
+  "nodes": [
+    "TE8310",
+    "TE8351",
+    "TE8352",
+    "FT8351",
+    "PT8310",
+    "PT8351",
+    "PT8352",
+    "CV8312",
+    "CV8311",
+    "CV8310",
+    "CV8313",
+    "CV8300",
+    "CV8351",
+    "Thv",
+    "TE8353",
+    "Tef",
+    "Tcd",
+    "DTbr",
+    "EC-V2",
+    "COOLDOWN"
+  ],
+  "node_index": {
+    "TE8310": 0,
+    "TE8351": 1,
+    "TE8352": 2,
+    "FT8351": 3,
+    "PT8310": 4,
+    "PT8351": 5,
+    "PT8352": 6,
+    "CV8312": 7,
+    "CV8311": 8,
+    "CV8310": 9,
+    "CV8313": 10,
+    "CV8300": 11,
+    "CV8351": 12,
+    "Thv": 13,
+    "TE8353": 14,
+    "Tef": 15,
+    "Tcd": 16,
+    "DTbr": 17,
+    "EC-V2": 18,
+    "COOLDOWN": 19
+  },
+  "edge_semantics": "source(t-lag_steps) -> destination(t)",
+  "edge_count": 2,
+  "edge_index": [
+    [
+      11,
+      14
+    ],
+    [
+      0,
+      13
+    ]
+  ],
+  "edge_lag_steps": [
+    1,
+    6
+  ],
+  "edges": [
+    {
+      "source": "CV8300",
+      "destination": "TE8310",
+      "lag_steps": 1,
+      "effect": 0.2,
+      "q_value": 0.01,
+      "bootstrap_stability": 0.8,
+      "confidence_score": 0.8,
+      "confidence": "high",
+      "edge_type": "both",
+      "forced_by_domain": false,
+      "physical_confidence": "high",
+      "mechanism": "G1 inlet valve changes premix temperature",
+      "expected_sign": "context_dependent"
+    },
+    {
+      "source": "TE8353",
+      "destination": "Thv",
+      "lag_steps": 6,
+      "effect": 0.3,
+      "q_value": 0.01,
+      "bootstrap_stability": 0.9,
+      "confidence_score": 0.9,
+      "confidence": "high",
+      "edge_type": "both",
+      "forced_by_domain": false,
+      "physical_confidence": "high",
+      "mechanism": "module inlet temperature drives the average cavity temperature",
+      "expected_sign": "usually_positive"
+    }
+  ],
+  "note": "Intersection: stable PCMCI edges whose variable pair occurs in the physical prior."
+}

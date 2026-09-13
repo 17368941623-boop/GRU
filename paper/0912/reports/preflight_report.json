@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "raw_signal_count": 54,
+  "engineered_feature_count": 0,
+  "pcmci_edges": 0,
+  "gnn_enabled": false,
+  "kan_enabled": false,
+  "history_shape_one_sample": [
+    60,
+    54
+  ],
+  "future_control_shape_one_sample": [
+    15,
+    8
+  ],
+  "target_shape_one_sample": [
+    15
+  ],
+  "prediction_shape_one_sample": [
+    1,
+    15
+  ],
+  "train_rows": 400590,
+  "train_windows": 382137,
+  "validation_rows": 22320,
+  "validation_windows": 20592,
+  "parameter_count": 41977,
+  "finite_train_windows": true,
+  "finite_validation_windows": true,
+  "frozen_test_loaded": false
+}

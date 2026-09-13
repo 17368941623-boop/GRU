@@ -1,0 +1,5430 @@
+{
+  "schema_version": "2.0",
+  "name": "HTC8300 approved physical and PCMCI lag constraints",
+  "status": "frozen_for_model_ablation_v2",
+  "sample_period_seconds": 10,
+  "history_steps": 60,
+  "raw_rows_required_for_history": 61,
+  "forecast_steps": 30,
+  "forecast_seconds": 300,
+  "target": "Thv",
+  "input_semantics": {
+    "global_gru": "all Raw54 levels for t-59..t (60 values)",
+    "difference_history": "60 differences for t-59..t, computed causally from raw rows t-60..t",
+    "process_gnn": "temperature/pressure/flow differences by default; level only where explicitly supported",
+    "valve_gnn": "current/past opening level plus opening difference",
+    "target_decoder": "predict 30 future Thv increments and add Thv(t) cumulatively"
+  },
+  "logical_graph": {
+    "nodes": [
+      {
+        "node_index": 0,
+        "signal": "TE8307",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 1,
+        "signal": "TE8308",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 2,
+        "signal": "TE8309",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 3,
+        "signal": "TE8310",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 4,
+        "signal": "TE8330",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 5,
+        "signal": "TE8339",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 6,
+        "signal": "TE8350",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 7,
+        "signal": "TE8351",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 8,
+        "signal": "TE8352",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 9,
+        "signal": "A管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 10,
+        "signal": "B管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 11,
+        "signal": "C管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 12,
+        "signal": "D管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 13,
+        "signal": "E管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 14,
+        "signal": "F管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 15,
+        "signal": "冷屏上",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 16,
+        "signal": "冷屏下",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 17,
+        "signal": "冷屏中",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 18,
+        "signal": "FT8351",
+        "category": "flow",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 19,
+        "signal": "PT8307",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 20,
+        "signal": "PT8308A",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 21,
+        "signal": "PT8308B",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 22,
+        "signal": "PT8309",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 23,
+        "signal": "PT8310",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 24,
+        "signal": "PT8330",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 25,
+        "signal": "PT8350",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 26,
+        "signal": "PT8351",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 27,
+        "signal": "PT8352",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 28,
+        "signal": "PT8390",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 29,
+        "signal": "PT8391",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 30,
+        "signal": "CV8312",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 31,
+        "signal": "CV8311",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 32,
+        "signal": "CV8310",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 33,
+        "signal": "CV8313",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 34,
+        "signal": "CV8300",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 35,
+        "signal": "CV8358",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 36,
+        "signal": "CV8359",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 37,
+        "signal": "CV8350",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 38,
+        "signal": "CV8351",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 39,
+        "signal": "CV8330",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 40,
+        "signal": "CV8339",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 41,
+        "signal": "CV8338",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 42,
+        "signal": "CV8308",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 43,
+        "signal": "CV8352",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 44,
+        "signal": "PT02",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 45,
+        "signal": "CV8305",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 46,
+        "signal": "TE8353",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 47,
+        "signal": "FC-V1",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 48,
+        "signal": "Thv",
+        "category": "temperature",
+        "is_target": true,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 49,
+        "signal": "Tef",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 50,
+        "signal": "Tcd",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 51,
+        "signal": "DTbr",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 52,
+        "signal": "EC-V2",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 53,
+        "signal": "COOLDOWN",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 54,
+        "signal": "H_mix",
+        "category": "latent_thermal_hydraulic_state",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": false
+      }
+    ],
+    "contains_virtual_H_mix": true,
+    "virtual_topology": "A管/EC-V2/COOLDOWN/FC-V1 -> H_mix -> Thv"
+  },
+  "compiled_graph": {
+    "nodes": [
+      {
+        "node_index": 0,
+        "signal": "TE8307",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 1,
+        "signal": "TE8308",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 2,
+        "signal": "TE8309",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 3,
+        "signal": "TE8310",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 4,
+        "signal": "TE8330",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 5,
+        "signal": "TE8339",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 6,
+        "signal": "TE8350",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 7,
+        "signal": "TE8351",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 8,
+        "signal": "TE8352",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 9,
+        "signal": "A管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 10,
+        "signal": "B管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 11,
+        "signal": "C管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 12,
+        "signal": "D管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 13,
+        "signal": "E管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 14,
+        "signal": "F管",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 15,
+        "signal": "冷屏上",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 16,
+        "signal": "冷屏下",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 17,
+        "signal": "冷屏中",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 18,
+        "signal": "FT8351",
+        "category": "flow",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 19,
+        "signal": "PT8307",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 20,
+        "signal": "PT8308A",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 21,
+        "signal": "PT8308B",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 22,
+        "signal": "PT8309",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 23,
+        "signal": "PT8310",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 24,
+        "signal": "PT8330",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 25,
+        "signal": "PT8350",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 26,
+        "signal": "PT8351",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 27,
+        "signal": "PT8352",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 28,
+        "signal": "PT8390",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 29,
+        "signal": "PT8391",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 30,
+        "signal": "CV8312",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 31,
+        "signal": "CV8311",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 32,
+        "signal": "CV8310",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 33,
+        "signal": "CV8313",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 34,
+        "signal": "CV8300",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 35,
+        "signal": "CV8358",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 36,
+        "signal": "CV8359",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 37,
+        "signal": "CV8350",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 38,
+        "signal": "CV8351",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 39,
+        "signal": "CV8330",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 40,
+        "signal": "CV8339",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 41,
+        "signal": "CV8338",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 42,
+        "signal": "CV8308",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 43,
+        "signal": "CV8352",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 44,
+        "signal": "PT02",
+        "category": "pressure",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 45,
+        "signal": "CV8305",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 46,
+        "signal": "TE8353",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 47,
+        "signal": "FC-V1",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 48,
+        "signal": "Thv",
+        "category": "temperature",
+        "is_target": true,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 49,
+        "signal": "Tef",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 50,
+        "signal": "Tcd",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 51,
+        "signal": "DTbr",
+        "category": "temperature",
+        "is_target": false,
+        "is_control": false,
+        "is_observed": true
+      },
+      {
+        "node_index": 52,
+        "signal": "EC-V2",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      },
+      {
+        "node_index": 53,
+        "signal": "COOLDOWN",
+        "category": "valve_or_control",
+        "is_target": false,
+        "is_control": true,
+        "is_observed": true
+      }
+    ],
+    "edge_index": [
+      [
+        34,
+        34,
+        33,
+        33,
+        32,
+        32,
+        32,
+        38,
+        38,
+        38,
+        3,
+        23,
+        23,
+        7,
+        26,
+        18,
+        18,
+        8,
+        27,
+        18,
+        30,
+        30,
+        39,
+        39,
+        31,
+        31,
+        37,
+        37,
+        46,
+        3,
+        23,
+        7,
+        26,
+        18,
+        8,
+        27,
+        46,
+        48,
+        4,
+        24,
+        6,
+        25,
+        9,
+        9
+      ],
+      [
+        3,
+        23,
+        3,
+        23,
+        18,
+        7,
+        26,
+        18,
+        7,
+        26,
+        7,
+        26,
+        18,
+        8,
+        27,
+        8,
+        27,
+        46,
+        46,
+        46,
+        4,
+        24,
+        4,
+        24,
+        6,
+        25,
+        6,
+        25,
+        9,
+        3,
+        23,
+        7,
+        26,
+        18,
+        8,
+        27,
+        46,
+        48,
+        4,
+        24,
+        6,
+        25,
+        9,
+        48
+      ]
+    ],
+    "edges": [
+      {
+        "edge_id": "physical_000",
+        "source": "CV8300",
+        "destination": "TE8310",
+        "source_index": 34,
+        "destination_index": 3,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G1 inlet valve changes premix temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            5
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.07839309248631772,
+              "q_value": 9.366243279531976e-44,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.06651874475431134
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.11489527399395233,
+              "q_value": 4.319412115016575e-93,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.09749187284089209
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": 0.1091113466975016,
+              "q_value": 5.265558272469341e-84,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.09258404778503974
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_001",
+        "source": "CV8300",
+        "destination": "PT8310",
+        "source_index": 34,
+        "destination_index": 23,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G1 inlet valve changes premix pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.05246524602073896,
+              "q_value": 3.612090961010487e-20,
+              "bootstrap_stability": 0.66,
+              "selection_score": 0.04262296735811573
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.04341225681116201,
+              "q_value": 3.4590089404661086e-14,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.03683652141334145
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.0312996002625503,
+              "q_value": 6.700428406402293e-08,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.02655859151289307
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_002",
+        "source": "CV8313",
+        "destination": "TE8310",
+        "source_index": 33,
+        "destination_index": 3,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G2 inlet valve changes premix temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            6
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.07717547564141329,
+              "q_value": 1.9422145423810855e-42,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.07482439975068075
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": -0.08049064557673258,
+              "q_value": 4.423278198110998e-46,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.07803857625455264
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_003",
+        "source": "CV8313",
+        "destination": "PT8310",
+        "source_index": 33,
+        "destination_index": 23,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G2 inlet valve changes premix pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            2,
+            5,
+            6
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.24772032487035098,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.24017376582932592
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.18570416847131954,
+              "q_value": 3.966613199539594e-244,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.18004687138733283
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": -0.18242337785342969,
+              "q_value": 1.759651121956859e-235,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.17686602686838382
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_004",
+        "source": "CV8310",
+        "destination": "FT8351",
+        "source_index": 32,
+        "destination_index": 18,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G main-path valve changes downstream helium flow",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.03715867077802217,
+              "q_value": 1.0837896326588457e-10,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.036026667971796565
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_005",
+        "source": "CV8310",
+        "destination": "TE8351",
+        "source_index": 32,
+        "destination_index": 7,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G stream admission changes post-mix temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            3,
+            9
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.13255749345124884,
+              "q_value": 8.001497923653468e-124,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.1285192581906432
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.12889184809268878,
+              "q_value": 4.549294314501101e-117,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.12496528315681853
+            },
+            {
+              "lag_steps": 9,
+              "lag_seconds": 90,
+              "effect": -0.16824492385209477,
+              "q_value": 6.108950653885996e-200,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.16311950569406877
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_006",
+        "source": "CV8310",
+        "destination": "PT8351",
+        "source_index": 32,
+        "destination_index": 26,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "G stream admission changes post-mix pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            6
+          ],
+          "level": [
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.16414225929869247,
+              "q_value": 3.2192956525270295e-190,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.15914182483061592
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.08552656603199009,
+              "q_value": 6.4608598752392316e-52,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.08552656603199009
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.21248563552860672,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.20601246706846685
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.2022273627188751,
+              "q_value": 2.789311343438088e-290,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.19606670257414333
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.19441280490862253,
+              "q_value": 6.302896467037286e-268,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.18849020767586797
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_007",
+        "source": "CV8351",
+        "destination": "FT8351",
+        "source_index": 38,
+        "destination_index": 18,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "4.6 K A-line valve changes mixed-line flow",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3
+          ],
+          "level": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.043168901154585236,
+              "q_value": 4.829775583249004e-14,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.04185380251877587
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.044518939814458175,
+              "q_value": 7.374033215217577e-15,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.043162713562415744
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.04104086548435788,
+              "q_value": 8.321337027014717e-13,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.039790595387890954
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.03673945554161261,
+              "q_value": 2.367781314438448e-10,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.035620223720303636
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.034998057611595475,
+              "q_value": 1.732515749145089e-09,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.03393187578648552
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.03316894594954087,
+              "q_value": 1.2718081677130582e-08,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.03215848623426404
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_008",
+        "source": "CV8351",
+        "destination": "TE8351",
+        "source_index": 38,
+        "destination_index": 7,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "4.6 K A-line valve changes post-mix temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            6,
+            7,
+            8
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.051219088460894395,
+              "q_value": 2.7888006015413025e-19,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.051219088460894395
+            },
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": 0.06104722369966876,
+              "q_value": 6.389375033738959e-27,
+              "bootstrap_stability": 0.76,
+              "selection_score": 0.05321973577811546
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": 0.05623954692296646,
+              "q_value": 5.172777813869194e-23,
+              "bootstrap_stability": 0.88,
+              "selection_score": 0.052757371442562234
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_009",
+        "source": "CV8351",
+        "destination": "PT8351",
+        "source_index": 38,
+        "destination_index": 26,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "A-line valve changes post-mix pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            7
+          ],
+          "level": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": 0.19287725106917863,
+              "q_value": 1.2639015572698677e-263,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.19287725106917863
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.062293042877036076,
+              "q_value": 6.0701382231891955e-28,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.062293042877036076
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.06078735312279822,
+              "q_value": 1.1690920083698656e-26,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.06078735312279822
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.05923243497552491,
+              "q_value": 2.3037596549502254e-25,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.05923243497552491
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_010",
+        "source": "TE8310",
+        "destination": "TE8351",
+        "source_index": 3,
+        "destination_index": 7,
+        "relation_type": "three_branch_kan_governed",
+        "relation_group": "retained_0908",
+        "mechanism": "premix thermal state is advected to the post-mix sensor",
+        "physical_confidence": "high",
+        "edge_function_id": "three_branch_kan_gate_8310_to_8351",
+        "active_representations": [
+          "level"
+        ],
+        "lag_pools": {
+          "difference": [],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "level_only_sensitivity_support",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.050095140053201564,
+              "q_value": 2.1426131676433673e-18,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.04250713588333038
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.060225628847783166,
+              "q_value": 3.549012656720681e-26,
+              "bootstrap_stability": 0.66,
+              "selection_score": 0.04892753217027418
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.040336274771041625,
+              "q_value": 2.8427712102062697e-12,
+              "bootstrap_stability": 0.66,
+              "selection_score": 0.032769344533989074
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_011",
+        "source": "PT8310",
+        "destination": "PT8351",
+        "source_index": 23,
+        "destination_index": 26,
+        "relation_type": "three_branch_kan_governed",
+        "relation_group": "retained_0908",
+        "mechanism": "upstream pressure propagates along the admitted G path",
+        "physical_confidence": "high",
+        "edge_function_id": "three_branch_kan_gate_8310_to_8351",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "level": []
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "physical_prior_only",
+          "fallback_to_physical_window": true,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_012",
+        "source": "PT8310",
+        "destination": "FT8351",
+        "source_index": 23,
+        "destination_index": 18,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "upstream pressure provides a flow-driving condition",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "level": []
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "physical_prior_only",
+          "fallback_to_physical_window": true,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_013",
+        "source": "TE8351",
+        "destination": "TE8352",
+        "source_index": 7,
+        "destination_index": 8,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "serial pipe transport and heat leak",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            12
+          ],
+          "level": [
+            10,
+            12
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": 0.17142196972838175,
+              "q_value": 1.3576093706762652e-207,
+              "bootstrap_stability": 0.68,
+              "selection_score": 0.14135817754831023
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 10,
+              "lag_seconds": 100,
+              "effect": -0.053577087596863554,
+              "q_value": 6.538120604743434e-21,
+              "bootstrap_stability": 0.68,
+              "selection_score": 0.044180798254967665
+            },
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": 0.147656068689033,
+              "q_value": 1.1617010308367669e-153,
+              "bootstrap_stability": 0.68,
+              "selection_score": 0.12176031349366793
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_014",
+        "source": "PT8351",
+        "destination": "PT8352",
+        "source_index": 26,
+        "destination_index": 27,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "serial pressure propagation",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            4
+          ],
+          "level": [
+            1
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.07009825218307578,
+              "q_value": 3.6116435836609157e-35,
+              "bootstrap_stability": 0.84,
+              "selection_score": 0.06424610934260964
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.1516738801977608,
+              "q_value": 3.3540432603961955e-162,
+              "bootstrap_stability": 0.96,
+              "selection_score": 0.14860944551701585
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.04619181068435693,
+              "q_value": 6.689079213028358e-16,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.04478462204642909
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.051930978205917855,
+              "q_value": 1.064570378035073e-19,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.05034895140495087
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_015",
+        "source": "FT8351",
+        "destination": "TE8352",
+        "source_index": 18,
+        "destination_index": 8,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "mass flow modulates downstream cooling and residence time",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "level": []
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "physical_prior_only",
+          "fallback_to_physical_window": true,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_016",
+        "source": "FT8351",
+        "destination": "PT8352",
+        "source_index": 18,
+        "destination_index": 27,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "mass flow and pressure loss are coupled",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            5
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.08713592215479546,
+              "q_value": 7.746364088720134e-54,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.08713592215479546
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.13745135975020525,
+              "q_value": 4.047641096168598e-133,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.1332640376071111
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.03887360488091394,
+              "q_value": 1.3428559854384789e-11,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.03298534754455286
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.10018743910001171,
+              "q_value": 7.57132758961938e-71,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.10018743910001171
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.08244764465855708,
+              "q_value": 2.9914357720917924e-48,
+              "bootstrap_stability": 0.88,
+              "selection_score": 0.07734274637336364
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.09523184000883209,
+              "q_value": 4.547275906164496e-64,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.09523184000883209
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_017",
+        "source": "TE8352",
+        "destination": "TE8353",
+        "source_index": 8,
+        "destination_index": 46,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "serial pipe transport to the module-side line",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "level": []
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "physical_prior_only",
+          "fallback_to_physical_window": true,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_018",
+        "source": "PT8352",
+        "destination": "TE8353",
+        "source_index": 27,
+        "destination_index": 46,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "pressure affects helium state and cooling capacity",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            6,
+            8
+          ],
+          "level": [
+            1,
+            5,
+            8
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.1273325417260391,
+              "q_value": 3.1977721358980705e-114,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.1273325417260391
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.032476101365886564,
+              "q_value": 2.0317070041805104e-08,
+              "bootstrap_stability": 0.86,
+              "selection_score": 0.030117097428827892
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": -0.0475185939471891,
+              "q_value": 9.187366140915756e-17,
+              "bootstrap_stability": 0.74,
+              "selection_score": 0.04087704013662436
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.06425436274631052,
+              "q_value": 1.1644267997616264e-29,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.06425436274631052
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.03481122862133955,
+              "q_value": 2.1472673238295185e-09,
+              "bootstrap_stability": 0.68,
+              "selection_score": 0.028706074512661522
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": -0.06730332544472378,
+              "q_value": 1.8848836407270042e-32,
+              "bootstrap_stability": 0.88,
+              "selection_score": 0.06313611567089153
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_019",
+        "source": "FT8351",
+        "destination": "TE8353",
+        "source_index": 18,
+        "destination_index": 46,
+        "relation_type": "static_physical",
+        "relation_group": "retained_0908",
+        "mechanism": "delivered flow changes the downstream inlet cooling trend",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2
+          ],
+          "level": [
+            1,
+            2
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.07694213875848462,
+              "q_value": 3.560147698178251e-42,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.07694213875848462
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.035600306573439364,
+              "q_value": 6.725725126397681e-10,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.035600306573439364
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.07393424736885854,
+              "q_value": 5.79945997228235e-39,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.07393424736885854
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.03926214282131447,
+              "q_value": 1.115428181414638e-11,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.03806605978277785
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_020",
+        "source": "CV8312",
+        "destination": "TE8330",
+        "source_index": 30,
+        "destination_index": 4,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "branch valve changes the local branch temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            5,
+            6,
+            7
+          ],
+          "level": [
+            0,
+            3,
+            4,
+            5
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.06036671464437133,
+              "q_value": 2.3997069285676932e-26,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.05852770132798364
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": -0.05737587117474121,
+              "q_value": 6.618770577845758e-24,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.055627970999101425
+            },
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": -0.052342639219132014,
+              "q_value": 4.42657770244092e-20,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.05074807156531924
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.057587195149726204,
+              "q_value": 5.0435208332650616e-24,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.055832857194486205
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.06198524940241471,
+              "q_value": 1.1224010434925964e-27,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.06009692899700267
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.05847249597783442,
+              "q_value": 9.691481418132137e-25,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.056691188192921044
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_021",
+        "source": "CV8312",
+        "destination": "PT8330",
+        "source_index": 30,
+        "destination_index": 24,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "branch valve changes the local branch pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            4
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": 0.03223568167707078,
+              "q_value": 2.5887983923090184e-08,
+              "bootstrap_stability": 0.7,
+              "selection_score": 0.02697030628728205
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_022",
+        "source": "CV8330",
+        "destination": "TE8330",
+        "source_index": 39,
+        "destination_index": 4,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "local valve changes the local branch temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            2,
+            3,
+            4
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.12856207475991435,
+              "q_value": 1.7960826485949712e-116,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.1246455560482578
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.20926150947244426,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.20288656088042087
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": 0.22846814151250008,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.22150808153429802
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_023",
+        "source": "CV8330",
+        "destination": "PT8330",
+        "source_index": 39,
+        "destination_index": 24,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "local valve changes the local branch pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            3,
+            5,
+            6
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.18638340971212541,
+              "q_value": 6.095136477802039e-246,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.18070542020360905
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": 0.0945473957881805,
+              "q_value": 2.992148952516171e-63,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.0916671012267064
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.10871877990199283,
+              "q_value": 2.080793720950891e-83,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10540676789075397
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_024",
+        "source": "CV8311",
+        "destination": "TE8350",
+        "source_index": 31,
+        "destination_index": 6,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "branch valve changes the local branch temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            5,
+            9,
+            12
+          ],
+          "level": [
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": 0.046073231929208196,
+              "q_value": 7.872655346634237e-16,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.04466965567785869
+            },
+            {
+              "lag_steps": 9,
+              "lag_seconds": 90,
+              "effect": 0.04956658139991312,
+              "q_value": 3.899971111063312e-18,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.04805658365066914
+            },
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": 0.035719439099796406,
+              "q_value": 5.852914620953713e-10,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.034631281088458456
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.10495209641904198,
+              "q_value": 1.0502592055169813e-77,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10175483276084124
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.10598858925579524,
+              "q_value": 3.086952038386035e-79,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10275974985025826
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": 0.10212850561538882,
+              "q_value": 1.3185685296355071e-73,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.09901725990795016
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_025",
+        "source": "CV8311",
+        "destination": "PT8350",
+        "source_index": 31,
+        "destination_index": 25,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "branch valve changes the local branch pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            4,
+            7
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.07907774121300518,
+              "q_value": 1.6635698329566914e-44,
+              "bootstrap_stability": 0.7,
+              "selection_score": 0.06616118506152767
+            },
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": 0.0670986468132659,
+              "q_value": 2.5832657251843323e-32,
+              "bootstrap_stability": 0.7,
+              "selection_score": 0.05613875562318761
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_026",
+        "source": "CV8350",
+        "destination": "TE8350",
+        "source_index": 37,
+        "destination_index": 6,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "local valve changes the local branch temperature",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "physical_prior_only",
+          "fallback_to_physical_window": true,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_027",
+        "source": "CV8350",
+        "destination": "PT8350",
+        "source_index": 37,
+        "destination_index": 25,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "local valve changes the local branch pressure",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            3
+          ],
+          "level": [
+            0
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.10633714541489331,
+              "q_value": 7.949024763682449e-80,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10309768758458589
+            }
+          ],
+          "level": []
+        }
+      },
+      {
+        "edge_id": "physical_028",
+        "source": "TE8353",
+        "destination": "A管",
+        "source_index": 46,
+        "destination_index": 9,
+        "relation_type": "static_physical",
+        "relation_group": "new_operator_confirmed",
+        "mechanism": "fluid passes TE8353 before the A-line temperature sensor",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            4
+          ],
+          "level": [
+            1,
+            2,
+            6
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.21264083231982286,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.21264083231982286
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.11332445986365212,
+              "q_value": 1.4647711289427002e-90,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.11332445986365212
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": 0.23519877409915546,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.23519877409915546
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.12462308296646815,
+              "q_value": 2.151333746703857e-109,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.12462308296646815
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.12415335084495024,
+              "q_value": 1.3933699759773017e-108,
+              "bootstrap_stability": 0.86,
+              "selection_score": 0.11513508106734976
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": -0.30493273229002116,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.30493273229002116
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_029",
+        "source": "TE8310",
+        "destination": "TE8310",
+        "source_index": 3,
+        "destination_index": 3,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.5362140993085485,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.5362140993085485
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.2906355783569813,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.2906355783569813
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.10495646162142142,
+              "q_value": 9.242467023196756e-78,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.10495646162142142
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.8608560394791809,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.8608560394791809
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.17766196472332868,
+              "q_value": 3.507140384144934e-223,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.17766196472332868
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.12566893156171877,
+              "q_value": 3.1044200819598422e-111,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.12566893156171877
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_030",
+        "source": "PT8310",
+        "destination": "PT8310",
+        "source_index": 23,
+        "destination_index": 23,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "pressure persistence",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            2,
+            3,
+            15
+          ],
+          "level": [
+            1,
+            2,
+            15
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.19260007361780807,
+              "q_value": 8.704662104434614e-263,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.18673269948279003
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.2550641453041519,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.24729386390800975
+            },
+            {
+              "lag_steps": 15,
+              "lag_seconds": 150,
+              "effect": 0.18512962346973394,
+              "q_value": 1.5838790940706707e-242,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.18512962346973394
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7593880985622061,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7593880985622061
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.15364098127102763,
+              "q_value": 1.8979378462973073e-166,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.14896045803624802
+            },
+            {
+              "lag_steps": 15,
+              "lag_seconds": 150,
+              "effect": 0.23089585882586444,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.23089585882586444
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_031",
+        "source": "TE8351",
+        "destination": "TE8351",
+        "source_index": 7,
+        "destination_index": 7,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            3,
+            8
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7222506690463935,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7222506690463935
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.11217402157807718,
+              "q_value": 9.749429844322303e-89,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.11217402157807718
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": 0.09173153750660726,
+              "q_value": 1.4296718891144658e-59,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.09173153750660726
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.8991254643158396,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.8991254643158396
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.4745749890543975,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.4745749890543975
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.08536603216717235,
+              "q_value": 1.1801503082461018e-51,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.08536603216717235
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_032",
+        "source": "PT8351",
+        "destination": "PT8351",
+        "source_index": 26,
+        "destination_index": 26,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "pressure persistence",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            2,
+            3
+          ],
+          "level": [
+            1,
+            12
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.14630168749226014,
+              "q_value": 7.243576972291976e-151,
+              "bootstrap_stability": 0.84,
+              "selection_score": 0.13408771144661122
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.10781179692794851,
+              "q_value": 5.2152856379319805e-82,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10452741527189513
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7498462251684035,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7498462251684035
+            },
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": 0.056958210602647545,
+              "q_value": 1.6108364140529124e-23,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.05522303405058634
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_033",
+        "source": "FT8351",
+        "destination": "FT8351",
+        "source_index": 18,
+        "destination_index": 18,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "flow persistence",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": -0.45619494091770335,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.45619494091770335
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.28270850393132685,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.28270850393132685
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.18285002297241768,
+              "q_value": 1.5790767355797735e-236,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.18285002297241768
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.41581055280784945,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.41581055280784945
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.1579306438601775,
+              "q_value": 6.1837047435213735e-176,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.1579306438601775
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.09154881931696543,
+              "q_value": 2.8490074122567182e-59,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.09154881931696543
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_034",
+        "source": "TE8352",
+        "destination": "TE8352",
+        "source_index": 8,
+        "destination_index": 8,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.6568852305868105,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.6568852305868105
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.3047200035858746,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.9,
+              "selection_score": 0.2890827779838119
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.9050738385796375,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.9050738385796375
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.5855606937279394,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.5855606937279394
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.29365709330922946,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.2847111152445158
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_035",
+        "source": "PT8352",
+        "destination": "PT8352",
+        "source_index": 27,
+        "destination_index": 27,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "pressure persistence",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            3
+          ],
+          "level": [
+            1,
+            4
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.12033947493912839,
+              "q_value": 4.737850887103503e-102,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.11667344974289395
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.07396877172482161,
+              "q_value": 5.3161490433370956e-39,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.07396877172482161
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.10999978792148331,
+              "q_value": 2.699294956792208e-85,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.10664875124540853
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_036",
+        "source": "TE8353",
+        "destination": "TE8353",
+        "source_index": 46,
+        "destination_index": 46,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            6
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.6627539793347126,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.6627539793347126
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.17279423657045806,
+              "q_value": 5.943773159662654e-211,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.1675302280200483
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.159336385424089,
+              "q_value": 4.204988083589695e-179,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.159336385424089
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.892914644775173,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.892914644775173
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.4935401855404791,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.4935401855404791
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.15069675572701152,
+              "q_value": 4.2573899033730037e-160,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.15069675572701152
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_037",
+        "source": "Thv",
+        "destination": "Thv",
+        "source_index": 48,
+        "destination_index": 48,
+        "relation_type": "self_memory",
+        "relation_group": "retained_self_lag",
+        "mechanism": "module thermal inertia",
+        "physical_confidence": "high",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            3
+          ],
+          "level": [
+            1,
+            3,
+            4
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.13221950025387863,
+              "q_value": 3.6892228777704235e-123,
+              "bootstrap_stability": 0.78,
+              "selection_score": 0.116773100810763
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.30930669631091345,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.30930669631091345
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.21997975043626444,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.21327828104587
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7998731250280795,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7998731250280795
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.1463757356718116,
+              "q_value": 5.2290647376679054e-151,
+              "bootstrap_stability": 0.96,
+              "selection_score": 0.1434183452481777
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.09671339509061833,
+              "q_value": 4.690927766173957e-66,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.09376711546462754
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_038",
+        "source": "TE8330",
+        "destination": "TE8330",
+        "source_index": 4,
+        "destination_index": 4,
+        "relation_type": "self_memory",
+        "relation_group": "new_self_lag_proposed",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            3,
+            21
+          ],
+          "level": [
+            1,
+            2,
+            4
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7695492172653129,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7695492172653129
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.1525715329558996,
+              "q_value": 3.922117134548504e-164,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.1479235894250892
+            },
+            {
+              "lag_steps": 21,
+              "lag_seconds": 210,
+              "effect": 0.07205535586300554,
+              "q_value": 4.201240062781402e-37,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.06986025944721151
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.9250236955605635,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.9250236955605635
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.5412484412021199,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.5247598332547005
+            },
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": 0.04977105600672756,
+              "q_value": 3.57868206144151e-18,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.04825482913723063
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_039",
+        "source": "PT8330",
+        "destination": "PT8330",
+        "source_index": 24,
+        "destination_index": 24,
+        "relation_type": "self_memory",
+        "relation_group": "new_self_lag_proposed",
+        "mechanism": "pressure persistence",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            7
+          ],
+          "level": [
+            1,
+            2,
+            8
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.7932199526711797,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.7932199526711797
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.18905037907879846,
+              "q_value": 4.7079939576402474e-253,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.18329114293944251
+            },
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": -0.19318417547787484,
+              "q_value": 2.116251123038536e-264,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.19318417547787484
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.9201102673028914,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.9201102673028914
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.5576909575325684,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.5576909575325684
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": 0.1322757030280641,
+              "q_value": 3.135026890022296e-123,
+              "bootstrap_stability": 0.94,
+              "selection_score": 0.12824605223894608
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_040",
+        "source": "TE8350",
+        "destination": "TE8350",
+        "source_index": 6,
+        "destination_index": 6,
+        "relation_type": "self_memory",
+        "relation_group": "new_self_lag_proposed",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.6873220432704105,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.6873220432704105
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.1623736401821759,
+              "q_value": 4.641272643900792e-186,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.1623736401821759
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.8904391139044651,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.8904391139044651
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.4746890191228172,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.4746890191228172
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": 0.10262466657349188,
+              "q_value": 2.632404461599868e-74,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.10262466657349188
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_041",
+        "source": "PT8350",
+        "destination": "PT8350",
+        "source_index": 25,
+        "destination_index": 25,
+        "relation_type": "self_memory",
+        "relation_group": "new_self_lag_proposed",
+        "mechanism": "pressure persistence",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            1,
+            2,
+            5
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.5816155080848291,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.5816155080848291
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.28125903808798375,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.28125903808798375
+            },
+            {
+              "lag_steps": 5,
+              "lag_seconds": 50,
+              "effect": -0.11713257329116143,
+              "q_value": 1.0415591904170993e-96,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.11713257329116143
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.8675505792303815,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.8675505792303815
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.18718745331911724,
+              "q_value": 4.675267181770253e-248,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.18718745331911724
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.16456467205591785,
+              "q_value": 3.7058345957712746e-191,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.16456467205591785
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_042",
+        "source": "A管",
+        "destination": "A管",
+        "source_index": 9,
+        "destination_index": 9,
+        "relation_type": "self_memory",
+        "relation_group": "new_self_lag_proposed",
+        "mechanism": "thermal inertia",
+        "physical_confidence": "medium",
+        "edge_function_id": "shared_lag_message",
+        "active_representations": [
+          "difference"
+        ],
+        "lag_pools": {
+          "difference": [
+            2,
+            6,
+            12
+          ],
+          "level": [
+            1,
+            2,
+            3
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "difference_primary",
+          "fallback_to_physical_window": false,
+          "hard_single_lag": false
+        },
+        "statistical_evidence": {
+          "difference": [
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": 0.3119729971659223,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.3119729971659223
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": 0.23011665766581663,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.23011665766581663
+            },
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": 0.15243940986326615,
+              "q_value": 7.604163975371823e-164,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.15243940986326615
+            }
+          ],
+          "level": [
+            {
+              "lag_steps": 1,
+              "lag_seconds": 10,
+              "effect": 0.8390419420698404,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.8390419420698404
+            },
+            {
+              "lag_steps": 2,
+              "lag_seconds": 20,
+              "effect": -0.252540918407718,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.252540918407718
+            },
+            {
+              "lag_steps": 3,
+              "lag_seconds": 30,
+              "effect": -0.3274607693409509,
+              "q_value": 0.0,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.3274607693409509
+            }
+          ]
+        }
+      },
+      {
+        "edge_id": "physical_043",
+        "source": "A管",
+        "destination": "Thv",
+        "source_index": 9,
+        "destination_index": 48,
+        "relation_type": "hmix_conditioned_edge",
+        "edge_function_id": "downstream_hmix_kan",
+        "enabled_by_default": true,
+        "compiled_from_logical_path": [
+          "A管/EC-V2/COOLDOWN/FC-V1 -> H_mix",
+          "H_mix -> Thv"
+        ],
+        "active_representations": [
+          "level",
+          "difference"
+        ],
+        "lag_pools": {
+          "level": [
+            0
+          ],
+          "difference": [
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        },
+        "lag_selection": {
+          "strategy": "attention_over_allowed_pool",
+          "evidence_class": "human_approved_targeted_pcmci_consensus",
+          "hard_single_lag": false
+        },
+        "condition_inputs": {
+          "A管": {
+            "level_lags": [
+              0
+            ],
+            "difference_lags": [
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "encoder": "lag_attention",
+            "physical_lag_claim": "130-170 s effective response window"
+          },
+          "COOLDOWN": {
+            "level_lags": [
+              0
+            ],
+            "difference_lags": [
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "encoder": "lag_attention",
+            "physical_lag_claim": "90-130 s effective response window"
+          },
+          "EC-V2": {
+            "level_lags": [
+              0
+            ],
+            "difference_lags": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59
+            ],
+            "encoder": "control_history_gru",
+            "physical_lag_claim": null,
+            "reason": "targeted PCMCI lag was boundary-sensitive and confounded with COOLDOWN"
+          },
+          "FC-V1": {
+            "level_lags": [
+              0
+            ],
+            "difference_lags": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59
+            ],
+            "encoder": "control_history_gru",
+            "physical_lag_claim": null,
+            "reason": "no stable independent targeted PCMCI lag"
+          }
+        },
+        "statistical_evidence": {
+          "A管_difference": [
+            {
+              "lag_steps": 4,
+              "lag_seconds": 40,
+              "effect": -0.02065759584437419,
+              "q_value": 9.473705878375167e-13,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.02065759584437419
+            },
+            {
+              "lag_steps": 6,
+              "lag_seconds": 60,
+              "effect": -0.023851107704379527,
+              "q_value": 1.2677840615777238e-16,
+              "bootstrap_stability": 0.98,
+              "selection_score": 0.023611391995208463
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": -0.027058897425960654,
+              "q_value": 4.5047349484716405e-21,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.027058897425960654
+            },
+            {
+              "lag_steps": 11,
+              "lag_seconds": 110,
+              "effect": -0.036980303454447,
+              "q_value": 2.0914795702626587e-38,
+              "bootstrap_stability": 0.8,
+              "selection_score": 0.033076188941085514
+            },
+            {
+              "lag_steps": 12,
+              "lag_seconds": 120,
+              "effect": -0.047874853144508345,
+              "q_value": 7.646288577217687e-64,
+              "bootstrap_stability": 0.84,
+              "selection_score": 0.04387802768392082
+            },
+            {
+              "lag_steps": 13,
+              "lag_seconds": 130,
+              "effect": 0.08099609115637424,
+              "q_value": 1.3044987924394155e-181,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.08099609115637424
+            },
+            {
+              "lag_steps": 14,
+              "lag_seconds": 140,
+              "effect": 0.1390041342007918,
+              "q_value": 0.0,
+              "bootstrap_stability": 0.92,
+              "selection_score": 0.1333280817341898
+            },
+            {
+              "lag_steps": 17,
+              "lag_seconds": 170,
+              "effect": 0.06301597016285986,
+              "q_value": 3.842082079162344e-110,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.05347082379024882
+            },
+            {
+              "lag_steps": 18,
+              "lag_seconds": 180,
+              "effect": -0.0480203605431211,
+              "q_value": 3.356246486231902e-64,
+              "bootstrap_stability": 0.78,
+              "selection_score": 0.042410434103169074
+            },
+            {
+              "lag_steps": 19,
+              "lag_seconds": 190,
+              "effect": 0.025637060826256563,
+              "q_value": 5.052957521045567e-19,
+              "bootstrap_stability": 0.84,
+              "selection_score": 0.023496754366501563
+            },
+            {
+              "lag_steps": 21,
+              "lag_seconds": 210,
+              "effect": 0.058538284020467804,
+              "q_value": 4.08321215687863e-95,
+              "bootstrap_stability": 0.78,
+              "selection_score": 0.05169961259939523
+            },
+            {
+              "lag_steps": 23,
+              "lag_seconds": 230,
+              "effect": -0.035074502536181204,
+              "q_value": 1.1853253951767746e-34,
+              "bootstrap_stability": 0.7,
+              "selection_score": 0.029345434222590866
+            },
+            {
+              "lag_steps": 24,
+              "lag_seconds": 240,
+              "effect": -0.028901531535763296,
+              "q_value": 7.401613704839039e-24,
+              "bootstrap_stability": 0.9,
+              "selection_score": 0.027418400256058854
+            },
+            {
+              "lag_steps": 25,
+              "lag_seconds": 250,
+              "effect": 0.021263147505760242,
+              "q_value": 1.8693607951257055e-13,
+              "bootstrap_stability": 0.98,
+              "selection_score": 0.02104944210697005
+            },
+            {
+              "lag_steps": 27,
+              "lag_seconds": 270,
+              "effect": 0.026841372815269816,
+              "q_value": 9.34889195556564e-21,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.026841372815269816
+            },
+            {
+              "lag_steps": 29,
+              "lag_seconds": 290,
+              "effect": 0.02189358189845391,
+              "q_value": 3.3800549792145685e-14,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.02189358189845391
+            },
+            {
+              "lag_steps": 31,
+              "lag_seconds": 310,
+              "effect": 0.03075217876353744,
+              "q_value": 7.536375877872403e-27,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03075217876353744
+            },
+            {
+              "lag_steps": 35,
+              "lag_seconds": 350,
+              "effect": 0.024291459892893795,
+              "q_value": 3.425486111199148e-17,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.024291459892893795
+            }
+          ],
+          "A管_level": [
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": -0.021668569380496463,
+              "q_value": 1.4979991670946893e-13,
+              "bootstrap_stability": 0.96,
+              "selection_score": 0.021230775375324692
+            },
+            {
+              "lag_steps": 10,
+              "lag_seconds": 100,
+              "effect": -0.05012169386031587,
+              "q_value": 7.24471536519813e-70,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.05012169386031587
+            },
+            {
+              "lag_steps": 13,
+              "lag_seconds": 130,
+              "effect": 0.09948762877025218,
+              "q_value": 1.9201691982602919e-274,
+              "bootstrap_stability": 0.82,
+              "selection_score": 0.0900898794994674
+            },
+            {
+              "lag_steps": 14,
+              "lag_seconds": 140,
+              "effect": 0.024281303423975466,
+              "q_value": 8.008901972636171e-17,
+              "bootstrap_stability": 0.66,
+              "selection_score": 0.019726224153099534
+            },
+            {
+              "lag_steps": 15,
+              "lag_seconds": 150,
+              "effect": -0.10023767495321581,
+              "q_value": 1.5295487092847655e-278,
+              "bootstrap_stability": 0.8,
+              "selection_score": 0.08965530204076744
+            },
+            {
+              "lag_steps": 18,
+              "lag_seconds": 180,
+              "effect": -0.062133559285542206,
+              "q_value": 4.0586163971144925e-107,
+              "bootstrap_stability": 0.66,
+              "selection_score": 0.05047754218524702
+            },
+            {
+              "lag_steps": 23,
+              "lag_seconds": 230,
+              "effect": -0.04447633387283405,
+              "q_value": 4.09286780144888e-55,
+              "bootstrap_stability": 0.64,
+              "selection_score": 0.03558106709826724
+            },
+            {
+              "lag_steps": 25,
+              "lag_seconds": 250,
+              "effect": 0.022039193958454776,
+              "q_value": 5.886183358202344e-14,
+              "bootstrap_stability": 0.8,
+              "selection_score": 0.019712454344163022
+            }
+          ],
+          "COOLDOWN_difference": [
+            {
+              "lag_steps": 9,
+              "lag_seconds": 90,
+              "effect": -0.06551655998443826,
+              "q_value": 5.242095320710497e-119,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.06551655998443826
+            },
+            {
+              "lag_steps": 30,
+              "lag_seconds": 300,
+              "effect": -0.021502064176318985,
+              "q_value": 9.930045162043788e-14,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.01824510646630019
+            },
+            {
+              "lag_steps": 31,
+              "lag_seconds": 310,
+              "effect": -0.02371109773864138,
+              "q_value": 1.9063567607929195e-16,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.0201195336004444
+            },
+            {
+              "lag_steps": 32,
+              "lag_seconds": 320,
+              "effect": -0.024562795887247826,
+              "q_value": 1.5129477327077542e-17,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.020842223444128772
+            },
+            {
+              "lag_steps": 33,
+              "lag_seconds": 330,
+              "effect": -0.024234333250835897,
+              "q_value": 4.007936352379545e-17,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.02056351365504083
+            },
+            {
+              "lag_steps": 34,
+              "lag_seconds": 340,
+              "effect": -0.02448012494393299,
+              "q_value": 1.9264922633852087e-17,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.020772074822578764
+            },
+            {
+              "lag_steps": 35,
+              "lag_seconds": 350,
+              "effect": -0.025395724491550205,
+              "q_value": 1.0670993772117341e-18,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.021548986801344525
+            },
+            {
+              "lag_steps": 36,
+              "lag_seconds": 360,
+              "effect": -0.02729545004422571,
+              "q_value": 2.157548251407417e-21,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.023160957386172777
+            },
+            {
+              "lag_steps": 37,
+              "lag_seconds": 370,
+              "effect": -0.025839263416650795,
+              "q_value": 2.6908477881322623e-19,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.021925342059335107
+            },
+            {
+              "lag_steps": 43,
+              "lag_seconds": 430,
+              "effect": 0.022197923697379857,
+              "q_value": 1.4635134280628545e-14,
+              "bootstrap_stability": 0.78,
+              "selection_score": 0.019604675382425097
+            },
+            {
+              "lag_steps": 44,
+              "lag_seconds": 440,
+              "effect": 0.02232257510452649,
+              "q_value": 1.0394041553853605e-14,
+              "bootstrap_stability": 0.8,
+              "selection_score": 0.01996591814662628
+            },
+            {
+              "lag_steps": 45,
+              "lag_seconds": 450,
+              "effect": 0.022832659018206743,
+              "q_value": 2.473628475117102e-15,
+              "bootstrap_stability": 0.86,
+              "selection_score": 0.02117413689725888
+            }
+          ],
+          "EC-V2_difference": [
+            {
+              "lag_steps": 7,
+              "lag_seconds": 70,
+              "effect": 0.022577728193440835,
+              "q_value": 5.1280080793848706e-15,
+              "bootstrap_stability": 0.98,
+              "selection_score": 0.0223508105931162
+            },
+            {
+              "lag_steps": 8,
+              "lag_seconds": 80,
+              "effect": 0.025494650089407878,
+              "q_value": 7.877122551549331e-19,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.025494650089407878
+            },
+            {
+              "lag_steps": 9,
+              "lag_seconds": 90,
+              "effect": 0.03137861168632278,
+              "q_value": 6.430389378816546e-28,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03137861168632278
+            },
+            {
+              "lag_steps": 10,
+              "lag_seconds": 100,
+              "effect": 0.030698176766253457,
+              "q_value": 8.992459413614909e-27,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.030698176766253457
+            },
+            {
+              "lag_steps": 11,
+              "lag_seconds": 110,
+              "effect": 0.023668851344109194,
+              "q_value": 2.1319111297818038e-16,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.023668851344109194
+            },
+            {
+              "lag_steps": 27,
+              "lag_seconds": 270,
+              "effect": -0.020616728796133105,
+              "q_value": 1.039985476609959e-12,
+              "bootstrap_stability": 0.74,
+              "selection_score": 0.01773518070467411
+            },
+            {
+              "lag_steps": 29,
+              "lag_seconds": 290,
+              "effect": -0.020030824383372507,
+              "q_value": 4.5904358415590395e-12,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.016996718105087454
+            },
+            {
+              "lag_steps": 30,
+              "lag_seconds": 300,
+              "effect": -0.02711792566728392,
+              "q_value": 3.824172610300033e-21,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.02301032295725903
+            },
+            {
+              "lag_steps": 34,
+              "lag_seconds": 340,
+              "effect": -0.02248819866968467,
+              "q_value": 6.545933009109641e-15,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.019081869331205193
+            },
+            {
+              "lag_steps": 35,
+              "lag_seconds": 350,
+              "effect": -0.025699368022685482,
+              "q_value": 4.185715588729709e-19,
+              "bootstrap_stability": 0.72,
+              "selection_score": 0.021806636881259542
+            },
+            {
+              "lag_steps": 41,
+              "lag_seconds": 410,
+              "effect": 0.029340935031361214,
+              "q_value": 1.471723503492272e-24,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.029340935031361214
+            },
+            {
+              "lag_steps": 42,
+              "lag_seconds": 420,
+              "effect": 0.03557344259366718,
+              "q_value": 1.291090566309589e-35,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03557344259366718
+            },
+            {
+              "lag_steps": 43,
+              "lag_seconds": 430,
+              "effect": 0.03920040592428904,
+              "q_value": 5.479703310328841e-43,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03920040592428904
+            },
+            {
+              "lag_steps": 44,
+              "lag_seconds": 440,
+              "effect": 0.037616620315092886,
+              "q_value": 1.1022025110754328e-39,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.037616620315092886
+            },
+            {
+              "lag_steps": 45,
+              "lag_seconds": 450,
+              "effect": 0.03775218608774318,
+              "q_value": 6.030470661489538e-40,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03775218608774318
+            },
+            {
+              "lag_steps": 46,
+              "lag_seconds": 460,
+              "effect": 0.03317687649704682,
+              "q_value": 4.2742092199936e-31,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.03317687649704682
+            },
+            {
+              "lag_steps": 47,
+              "lag_seconds": 470,
+              "effect": 0.027420265908269206,
+              "q_value": 1.4626563308554114e-21,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.027420265908269206
+            },
+            {
+              "lag_steps": 48,
+              "lag_seconds": 480,
+              "effect": 0.02707319848602577,
+              "q_value": 4.367423820132127e-21,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.02707319848602577
+            },
+            {
+              "lag_steps": 49,
+              "lag_seconds": 490,
+              "effect": 0.029818640403160807,
+              "q_value": 2.551109748060194e-25,
+              "bootstrap_stability": 1.0,
+              "selection_score": 0.029818640403160807
+            },
+            {
+              "lag_steps": 50,
+              "lag_seconds": 500,
+              "effect": 0.024091727968358772,
+              "q_value": 6.13025438702211e-17,
+              "bootstrap_stability": 0.96,
+              "selection_score": 0.02360497621776697
+            }
+          ],
+          "FC-V1_difference": []
+        }
+      }
+    ],
+    "H_mix_compilation": "collapsed conditioned edge A管 -> Thv; the three valves are function inputs",
+    "self_memory_edges_enabled_by_default": true
+  },
+  "special_functions": {
+    "three_branch_kan": {
+      "function_id": "three_branch_kan_gate",
+      "model": "KAN",
+      "branch_history_steps": 60,
+      "branch_inputs": {
+        "branch_1": [
+          "CV8312",
+          "CV8330",
+          "TE8330",
+          "PT8330"
+        ],
+        "branch_2": [
+          "CV8311",
+          "CV8350",
+          "TE8350",
+          "PT8350"
+        ],
+        "branch_3": [
+          "CV8310",
+          "CV8351",
+          "TE8310",
+          "PT8310"
+        ]
+      },
+      "input_policy": {
+        "valves": [
+          "level",
+          "difference"
+        ],
+        "temperature_pressure_flow": [
+          "difference"
+        ]
+      },
+      "outputs": [
+        {
+          "name": "alpha_T",
+          "governs": "TE8310 -> TE8351"
+        },
+        {
+          "name": "alpha_P",
+          "governs": "PT8310 -> PT8351"
+        }
+      ],
+      "interpretation": "branch encodings condition two physical messages; they are not extra material-flow edges"
+    },
+    "downstream_hmix_kan_edge_id": "physical_043"
+  },
+  "optional_pcmci_edges": [
+    {
+      "edge_id": "optional_pcmci_01",
+      "source": "TE8351",
+      "destination": "A管",
+      "source_index": 7,
+      "destination_index": 9,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.6640472026295724,
+      "q_value": 0.0,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.6640472026295724,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_02",
+      "source": "CV8311",
+      "destination": "PT8310",
+      "source_index": 31,
+      "destination_index": 23,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        18
+      ],
+      "lag_seconds": [
+        180
+      ],
+      "effect": 0.4904107446086884,
+      "q_value": 0.0,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.4754708577000164,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_03",
+      "source": "CV8308",
+      "destination": "PT8310",
+      "source_index": 42,
+      "destination_index": 23,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        17
+      ],
+      "lag_seconds": [
+        170
+      ],
+      "effect": -0.45870288814990506,
+      "q_value": 0.0,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.45870288814990506,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_04",
+      "source": "A管",
+      "destination": "TE8351",
+      "source_index": 9,
+      "destination_index": 7,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": -0.38596996709810616,
+      "q_value": 0.0,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.38596996709810616,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_05",
+      "source": "TE8352",
+      "destination": "Thv",
+      "source_index": 8,
+      "destination_index": 48,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        3
+      ],
+      "lag_seconds": [
+        30
+      ],
+      "effect": 0.3014904674992335,
+      "q_value": 0.0,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.29230585329981335,
+      "direct_to_target": true,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_06",
+      "source": "CV8310",
+      "destination": "TE8353",
+      "source_index": 32,
+      "destination_index": 46,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.27212299650877336,
+      "q_value": 0.0,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.27212299650877336,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_07",
+      "source": "PT8307",
+      "destination": "PT8308B",
+      "source_index": 19,
+      "destination_index": 21,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.25174509648561916,
+      "q_value": 0.0,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.24407592668733324,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_08",
+      "source": "CV8352",
+      "destination": "PT8310",
+      "source_index": 43,
+      "destination_index": 23,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        17
+      ],
+      "lag_seconds": [
+        170
+      ],
+      "effect": -0.20282930278541653,
+      "q_value": 5.221955570873903e-292,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.20282930278541653,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_09",
+      "source": "TE8353",
+      "destination": "TE8351",
+      "source_index": 46,
+      "destination_index": 7,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        3
+      ],
+      "lag_seconds": [
+        30
+      ],
+      "effect": 0.19836565427011604,
+      "q_value": 5.1044473560613094e-279,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.19232263732169058,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_10",
+      "source": "TE8352",
+      "destination": "DTbr",
+      "source_index": 8,
+      "destination_index": 51,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        7
+      ],
+      "lag_seconds": [
+        70
+      ],
+      "effect": -0.19236511124811528,
+      "q_value": 3.924429719895709e-262,
+      "bootstrap_stability": 0.92,
+      "selection_score": 0.1845101329018539,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_11",
+      "source": "CV8310",
+      "destination": "PT8352",
+      "source_index": 32,
+      "destination_index": 27,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.1869720949875162,
+      "q_value": 1.6237827407757994e-247,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.18127617175398297,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_12",
+      "source": "TE8330",
+      "destination": "TE8339",
+      "source_index": 4,
+      "destination_index": 5,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.16534655863306186,
+      "q_value": 5.226203757214131e-193,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.1603094363557204,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_13",
+      "source": "Thv",
+      "destination": "DTbr",
+      "source_index": 48,
+      "destination_index": 51,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        2
+      ],
+      "lag_seconds": [
+        20
+      ],
+      "effect": -0.1544400696799651,
+      "q_value": 3.38262511604462e-168,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.14973520299310822,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_14",
+      "source": "A管",
+      "destination": "TE8352",
+      "source_index": 9,
+      "destination_index": 8,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        14
+      ],
+      "lag_seconds": [
+        140
+      ],
+      "effect": -0.14884263132773137,
+      "q_value": 3.5806007484808766e-156,
+      "bootstrap_stability": 0.88,
+      "selection_score": 0.13962676474263597,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_15",
+      "source": "FT8351",
+      "destination": "PT8351",
+      "source_index": 18,
+      "destination_index": 26,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        2
+      ],
+      "lag_seconds": [
+        20
+      ],
+      "effect": 0.13759609346216048,
+      "q_value": 2.132395596828803e-133,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.133404362147138,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_16",
+      "source": "CV8351",
+      "destination": "TE8352",
+      "source_index": 38,
+      "destination_index": 8,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": -0.12702831861983627,
+      "q_value": 1.0207246372781889e-113,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.12702831861983627,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_17",
+      "source": "TE8350",
+      "destination": "C管",
+      "source_index": 6,
+      "destination_index": 11,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        10
+      ],
+      "lag_seconds": [
+        100
+      ],
+      "effect": 0.13188545756519737,
+      "q_value": 1.5246547882783025e-122,
+      "bootstrap_stability": 0.86,
+      "selection_score": 0.12230554185635281,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_18",
+      "source": "冷屏中",
+      "destination": "冷屏下",
+      "source_index": 17,
+      "destination_index": 16,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        23
+      ],
+      "lag_seconds": [
+        230
+      ],
+      "effect": 0.11859712273673698,
+      "q_value": 3.899905387374363e-99,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.11859712273673698,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_19",
+      "source": "冷屏下",
+      "destination": "冷屏中",
+      "source_index": 16,
+      "destination_index": 17,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        8
+      ],
+      "lag_seconds": [
+        80
+      ],
+      "effect": 0.11628838550722909,
+      "q_value": 2.4763337600364923e-95,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.11274577281497188,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_20",
+      "source": "TE8353",
+      "destination": "TE8352",
+      "source_index": 46,
+      "destination_index": 8,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        17
+      ],
+      "lag_seconds": [
+        170
+      ],
+      "effect": 0.10885212499304381,
+      "q_value": 1.388487442338644e-83,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.1055360507531486,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_21",
+      "source": "CV8310",
+      "destination": "A管",
+      "source_index": 32,
+      "destination_index": 9,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        10
+      ],
+      "lag_seconds": [
+        100
+      ],
+      "effect": -0.09693200152061657,
+      "q_value": 1.9209671550173216e-66,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.09693200152061657,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_22",
+      "source": "TE8351",
+      "destination": "TE8353",
+      "source_index": 7,
+      "destination_index": 46,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": -0.10025767276729709,
+      "q_value": 5.222114606241456e-71,
+      "bootstrap_stability": 0.88,
+      "selection_score": 0.09405003367819012,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_23",
+      "source": "TE8339",
+      "destination": "TE8330",
+      "source_index": 5,
+      "destination_index": 4,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        9
+      ],
+      "lag_seconds": [
+        90
+      ],
+      "effect": 0.09203548521992104,
+      "q_value": 5.728070012796089e-60,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.0892317135736299,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_24",
+      "source": "PT8308B",
+      "destination": "PT8307",
+      "source_index": 21,
+      "destination_index": 19,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.08503785293727731,
+      "q_value": 2.5246079400223952e-51,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.08503785293727731,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_25",
+      "source": "Tcd",
+      "destination": "D管",
+      "source_index": 50,
+      "destination_index": 12,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        23
+      ],
+      "lag_seconds": [
+        230
+      ],
+      "effect": 0.08804425238003966,
+      "q_value": 5.966498186457187e-55,
+      "bootstrap_stability": 0.88,
+      "selection_score": 0.0825928297850419,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_26",
+      "source": "CV8358",
+      "destination": "PT8310",
+      "source_index": 35,
+      "destination_index": 23,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        12
+      ],
+      "lag_seconds": [
+        120
+      ],
+      "effect": 0.08427085032813822,
+      "q_value": 1.9793877531900948e-50,
+      "bootstrap_stability": 0.9,
+      "selection_score": 0.07994634821881938,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_27",
+      "source": "CV8351",
+      "destination": "TE8308",
+      "source_index": 38,
+      "destination_index": 1,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        9
+      ],
+      "lag_seconds": [
+        90
+      ],
+      "effect": -0.07458370990291013,
+      "q_value": 1.0701054088661194e-39,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.07458370990291013,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_28",
+      "source": "TE8330",
+      "destination": "E管",
+      "source_index": 4,
+      "destination_index": 13,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        13
+      ],
+      "lag_seconds": [
+        130
+      ],
+      "effect": 0.0725216510970139,
+      "q_value": 1.415143195741117e-37,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.0725216510970139,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_29",
+      "source": "PT8352",
+      "destination": "PT8351",
+      "source_index": 27,
+      "destination_index": 26,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.07615055195422811,
+      "q_value": 2.4677751493120055e-41,
+      "bootstrap_stability": 0.84,
+      "selection_score": 0.06979313370858353,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_30",
+      "source": "TE8339",
+      "destination": "E管",
+      "source_index": 5,
+      "destination_index": 13,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        30
+      ],
+      "lag_seconds": [
+        300
+      ],
+      "effect": -0.06676374760377723,
+      "q_value": 5.332514143205331e-32,
+      "bootstrap_stability": 1.0,
+      "selection_score": 0.06676374760377723,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_31",
+      "source": "TE8351",
+      "destination": "Thv",
+      "source_index": 7,
+      "destination_index": 48,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        17
+      ],
+      "lag_seconds": [
+        170
+      ],
+      "effect": 0.0655717634882895,
+      "q_value": 6.750314907027264e-31,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.06357418341548969,
+      "direct_to_target": true,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    },
+    {
+      "edge_id": "optional_pcmci_32",
+      "source": "PT8330",
+      "destination": "F管",
+      "source_index": 24,
+      "destination_index": 14,
+      "relation_type": "optional_data_driven",
+      "enabled_by_default": false,
+      "representation": "difference",
+      "lag_steps": [
+        1
+      ],
+      "lag_seconds": [
+        10
+      ],
+      "effect": 0.05907040044085398,
+      "q_value": 2.880212271378629e-25,
+      "bootstrap_stability": 0.94,
+      "selection_score": 0.05727087807732889,
+      "direct_to_target": false,
+      "use_rule": "only in the optional-PCMCI ablation and with a learnable gate"
+    }
+  ],
+  "optional_pcmci_edges_enabled_by_default": false,
+  "training_guards": {
+    "lag_discovery_split": "Original training parent runs only",
+    "reuse_same_graph_for_all_seeds": true,
+    "validation_may_select_model_not_graph": true,
+    "frozen_test_access_before_final_selection": false,
+    "future_process_measurements_allowed": false,
+    "future_controls_allowed_only_if_available_at_prediction_time": true,
+    "primary_control_mode": "history_only",
+    "secondary_control_mode": "known_plan_only",
+    "recorded_future_valves_must_not_be_used_as_if_known": true
+  },
+  "human_approval": {
+    "approved_date": "2026-09-13",
+    "status": "accepted_by_operator",
+    "decisions": {
+      "A管_to_Thv_effective_lag_steps": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "COOLDOWN_to_Thv_effective_lag_steps": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "EC-V2": "do not assert one hard physical lag; encode current level and learned past-action history",
+      "FC-V1": "do not assert one hard physical lag; encode current level and learned past-action history",
+      "H_mix": "logical virtual state; compile as one A管-to-Thv KAN conditioned edge"
+    }
+  }
+}

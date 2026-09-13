@@ -1,0 +1,22 @@
+{
+  "scope": "validation only; frozen test not opened",
+  "interpretation": "descriptive residual-tail audit; official metrics remain unchanged",
+  "absolute_error_all_seeds_all_horizons_k": {
+    "p50": 0.01633965683965055,
+    "p90": 0.0586731752705406,
+    "p95": 0.08482370472955951,
+    "p99": 0.18116426367646934,
+    "max": 9.310886290046788,
+    "fraction_gt_0p5k": 0.0015624837214148043,
+    "fraction_gt_1k": 0.0010769911965411263,
+    "fraction_gt_2k": 0.0007727769964056884,
+    "fraction_gt_5k": 0.0002953586497890295
+  },
+  "final_150s_absolute_error_k": {
+    "p50": 0.02844906121377644,
+    "p90": 0.09093295904800201,
+    "p95": 0.1291605892617353,
+    "p99": 0.2727271250727448,
+    "max": 8.633601224073928
+  }
+}

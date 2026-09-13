@@ -1,0 +1,53 @@
+{
+  "method": "prespecified H_mix source-to-Thv conditional MCI; no marginal pre-screen",
+  "interpretation": "This estimates conditional predictive delays, not isolated physical transport time. Compare with hmix_lag_diagnostics event and lead/lag outputs.",
+  "transform": "level",
+  "variables": [
+    "TE8352",
+    "TE8353",
+    "A管",
+    "EC-V2",
+    "COOLDOWN",
+    "FC-V1",
+    "Thv"
+  ],
+  "target_sources": [
+    "TE8352",
+    "TE8353",
+    "A管",
+    "EC-V2",
+    "COOLDOWN",
+    "FC-V1"
+  ],
+  "max_lag_steps": 60,
+  "max_lag_seconds": 600,
+  "parent_runs_used": [
+    "0617-ALL",
+    "0623-BACK",
+    "0715-ALL",
+    "251130",
+    "251226",
+    "260118",
+    "260403"
+  ],
+  "parent_runs_count": 7,
+  "segments": 39,
+  "target_lags_tested_and_bootstrapped": 360,
+  "bootstrap_runs": 50,
+  "fdr_family": "360 prespecified source-lag tests into Thv",
+  "min_effect": 0.02,
+  "min_stability": 0.6,
+  "stable_lags": 31,
+  "validation_loaded": false,
+  "test_loaded": false,
+  "engineered_features_used": false,
+  "data_audit": {
+    "train_rows_total": 394749,
+    "original_rows_total": 131583,
+    "augmented_rows_ignored": 263166,
+    "finite_segment_rows_used": 131435,
+    "short_or_invalid_rows_ignored": 148,
+    "original_parent_runs": 7,
+    "original_segments": 39
+  }
+}

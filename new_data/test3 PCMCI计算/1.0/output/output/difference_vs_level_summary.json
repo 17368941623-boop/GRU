@@ -1,0 +1,7 @@
+{
+  "difference_edges": 199,
+  "level_edges": 196,
+  "common_exact_lagged_edges": 90,
+  "exact_edge_jaccard": 0.29508196721311475,
+  "interpretation": "difference is the primary dynamic-change graph; level is a sensitivity analysis. Agreement strengthens a delay claim, while disagreement identifies a modeling choice to ablate."
+}

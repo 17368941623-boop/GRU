@@ -1,0 +1,40 @@
+{
+  "history_features": 40,
+  "raw_graph_nodes": 20,
+  "future_controls": [
+    "CV8312",
+    "CV8311",
+    "CV8310",
+    "CV8313",
+    "CV8300",
+    "CV8351",
+    "EC-V2",
+    "COOLDOWN"
+  ],
+  "future_noncontrol_measurements_used": false,
+  "train_0617_rows_excluded": 65178,
+  "rows": {
+    "train": 320385,
+    "validation": 26132,
+    "test_full": 10925
+  },
+  "valid_windows": {
+    "train": {
+      "h15": 306447,
+      "h30": 305028
+    },
+    "validation": {
+      "h15": 25596,
+      "h30": 25536
+    },
+    "test_full": {
+      "h15": 10657,
+      "h30": 10627
+    }
+  },
+  "static_relations": 35,
+  "h15_first_output_future_control_max_gradient": 0.0,
+  "h30_first_output_future_control_max_gradient": 0.0,
+  "kan_minimum_grid_increment": 0.006931424140930176,
+  "status": "PASS"
+}

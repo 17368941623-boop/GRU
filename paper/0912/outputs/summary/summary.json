@@ -1,0 +1,22 @@
+{
+  "experiment": "raw54_gru",
+  "completed_seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "lookback": 60,
+  "predict_steps": 15,
+  "primary_metric_mean": 0.09337504581496939,
+  "primary_metric_std_across_seeds": 0.013546866129494458,
+  "final_horizon_rmse_mean": 0.13809136392458737,
+  "total_training_seconds": 3953.7280279000406,
+  "test_data_loaded": false
+}

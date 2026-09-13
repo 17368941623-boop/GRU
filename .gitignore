@@ -1,0 +1,35 @@
+# ===== 数据集 / 模型权重 / 构建产物（不入库） =====
+*.csv
+*.pkl
+*.pt
+*.pth
+*.npz
+*.npy
+*.zip
+*.tar
+*.gz
+*.xlsx
+*.xlsm
+*.xls
+*.tiff
+*.tif
+
+# ===== 依赖 / 缓存 / 构建目录 =====
+node_modules/
+.next/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.qa_deps/
+qa_deps/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ===== 系统 / 编辑器 =====
+__MACOSX/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

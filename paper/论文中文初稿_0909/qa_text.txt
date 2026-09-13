@@ -1,0 +1,575 @@
+Highlights
+
+               –
+
+
+
+ •                 15
+
+ •    10                60
+
+ •         –                 RMSE   18.75%
+                                                                     –
+                               a,<
+
+a
+                     ,               ,       ,          ,
+
+
+
+ARTICLE INFO
+
+Keywords:
+
+                                                                                  15                –                            60
+
+                                                                                                        15
+
+                                                                                                        Huber                        10
+Kolmogorov–Arnold                                                           60                                  RMSE 1.180 K
+                                                         65–120                                    GRU–MLP–GNN               RMSE
+                                                       1.142 , 0.049 K       GRU–          KAN–GNN  1.150 , 0.044 K          GRU
+                                                    1.176 , 0.033 K          –
+                                                               GRU–      KAN–GNN                                20              RMSE
+                                                    1.181 , 0.050 K      0.960 , 0.033 K
+
+
+
+
+1.
+
+
+
+
+                                                                                 1.
+                                                                                                                           15
+                                                                                                             15
+
+[4, 5, 16]
+                                                                                 2.             –                    GRU
+                                                                                                        GNN
+                                                                                      KAN
+
+
+
+                                                                                 3.                                             10
+
+
+
+
+                                                                           2.
+
+     <
+                                                                           2.1.
+         orcid(s):
+
+
+
+
+                         : Preprint submitted to Elsevier                                                                  Page 1 of 9
+                                                      –
+
+
+
+                                        Fourier                                                     [15]
+                                                           MonoPINN
+                         CFD     3–4                                                              [17]
+      [7]                                                    KAN
+                                                                                                  [13]
+                                                      KAN
+                                                                           –
+2.2.
+                                                                                                 Neural ODE
+       LSTM
+                                                                                 [2]
+      [9] GRU
+                                                                                                                   [12]
+        [3]                                   LSTM
+
+                                                                                                               ODE
+                          GRU
+                LSTM                   [5]
+                                                                1
+
+                                  5            [16]
+                                                      3.
+                                                      3.1.
+                                        [4]
+                                                                                G                  A
+                                                                                G                              CV8300
+                                                           CV8313                        CV8310
+                                                             CV8311            CV8312                          A
+                  GRU
+                                                           CV8351                                              TE8351
+                                                      TE8352          TE8353                               EC-V2
+2.3.                                                  COOLDOWN
+                                                                                       Thv                 TE8353
+                LSTM
+                   [8]                                                              20             5
+                                                            TE8310 TE8351 TE8352 TE8353                        Thv      3
+[6]                                                                    1                     8                     Tef
+                                                      Tcd       DTbr
+                                                                      bar g/s            K
+TempCaFe                                                                                                   0
+                                                           0%
+                                [18]                                           ∆𝑡 = 10 s                           𝐿
+                                RMSE                                𝐻 = 15
+
+                                                             𝑿 𝑡 = [𝒙𝑡*𝐿+1 , § , 𝒙𝑡 ],                                 (1)
+2.4.
+
+                      [14]                                   𝑼 𝑡 = [𝒖𝑡 , 𝒖𝑡+1 , § , 𝒖𝑡+𝐻*1 ],                          (2)
+
+
+
+                : Preprint submitted to Elsevier                                                           Page 2 of 9
+                                                                     –
+
+  1
+
+
+
+
+      /
+
+
+LSTM/GRU                                                                              GRU
+
+
+
+
+GNN                                                                                                            GRU
+
+
+              /KAN
+
+
+Neural ODE/FNO
+
+
+
+
+          𝒖           8                                 𝑡                 2
+
+
+
+          ∆Thv𝑡,𝐻 = Thv𝑡+𝐻 * Thv𝑡 ,
+                                                               (3)
+                         ̂ 𝑡,𝐻 .
+          ̂ 𝑡+𝐻 = Thv𝑡 + ∆Thv
+          Thv                                                                       0623-BACK 0715-ALL
+                                                                                    251130   251226   260118
+                                          ̂ =0
+                                          ∆Thv                                      260403
+                                                                                    Original 260501
+
+
+3.2.                                                                                Original 0715-BACK
+
+
+
+                          0623-BACK 0715-ALL 251130
+251226         260118       260403                      0617         4.         –
+                                                                     4.1.
+Original 260501                      Original 0715-BACK
+                          0715-BACK
+
+                                                                                                                            15
+
+
+                                                                          GRU                                   GRU
+                                                                                          GNN
+
+
+                                                                                                                            (3)
+
+                                        0617
+                            260501                                   4.2.
+                                                  0715-BACK                                       GRU                  64
+                                306,543                     25,600                           𝑿𝑡                𝒉gru
+                                                                                                                𝑡      GRU
+                     10,659                                               LSTM                           10                 GRU
+
+
+                     : Preprint submitted to Elsevier                                                                 Page 3 of 9
+                                                                            –
+
+             GRU
+    LSTM                                                GRU                                      (                     )
+                                                                                      ̂ 𝑡,𝐻 = 𝑝𝑠𝑖 [𝒉gru ; 𝒉graph ; 𝒉𝑢 ] ,
+                                                                                      ∆Thv                                                              (7)
+                                                                                                    𝑡      𝑡        𝑡
+4.3.
+                                                                                      𝜓            64
+                        11             G1             G2          G
+                                                                            𝒖𝑡        𝒖𝑡+14                                                𝒖𝑡+15
+G                            A
+                                                      11
+                                                                            4.6.
+                                                                                                                  20
+                                                                                                                                            3
+                                                                                          G                                                     300 K
+               𝑖→𝑗
+
+       𝒎𝑖→𝑗 = 𝑔𝑖𝑗 (𝑎𝑖𝑗 , 𝒄 𝑡 )𝑾 𝑚 𝒛𝑖 ,                                                                                                 CoolProp
+                   ⦅            (                       )⦆                  [1]
+                                          ∑                           (4)
+             𝒛¨𝑗 = LN       𝒛𝑗 + 𝜙 𝒛𝑗 ,          𝒎𝑖→𝑗         ,
+                                             𝑖                              4.7.
+       𝑎𝑖𝑗                    𝒄𝑡
+                  𝑔𝑖𝑗 ≥ 0                𝜙                                  ∆Thv                  10               𝑞0.1
+                                                                                          3                               1
+
+                                       64                    𝒉graph
+                                                              𝑡                       𝑤𝑖 = 1 + 2 𝕀(∆Thv𝑖 ≤ 𝑞0.1 ),
+                                                                                           ∑
+                                                                                              𝑤𝑖 𝓁Huber (ˆ𝑦𝑖 * 𝑦𝑖 )                                     (8)
+4.4. MLP                     KAN                                                      = 𝑖         ∑                .
+                                                                                                     𝑖 𝑤𝑖
+       MLP
+                                                                            Huber
+                    KAN                                                                           [10]                    Adam[11]
+                                                                            10*3                         10*5                 256          100
+                                             (          )                                         12
+       𝑔𝑖𝑗 (𝑎𝑖𝑗 , 𝒄 𝑡 ) = 𝑠𝑖𝑗 (𝑎𝑖𝑗 ) softplus 𝑞𝑖𝑗 (𝒄 𝑡 ) ,            (5)
+
+       𝑞𝑖𝑗                                   𝑠𝑖𝑗           [0, 1]
+                                                                            5.
+softplus                                                                    5.1.
+       𝜕𝑠𝑖𝑗 (𝑎)                                                                                                   0715-BACK
+                    ≥ 0.                                              (6)   10,659                                        RMSE
+             𝜕𝑎
+                                                                             MAE                                  95                P95
+                                                                                                       𝑅  2
+                                                                                                                          10
+                                                                                                              ,
+                                                                                  ̂ 𝑡+15 = Thv𝑡
+                                                                                  Thv                                     RMSE            1.978 K
+
+                                                                            5.2.
+
+4.5.
+                              15 � 8
+                                                                                  𝐿       15 30 40 45 50 55 60 65 70 75 90
+         SiLU          dropout                   32            𝒉𝑢𝑡
+                                                                                  120         1               RMSE            𝐿 = 15      1.256 , 0.038
+
+                    : Preprint submitted to Elsevier                                                                                        Page 4 of 9
+                                                                                                             –
+
+    3
+
+
+
+
+                                             4          𝑇𝑡 * 𝑇𝑡*1     (𝑇𝑡 * 𝑇𝑡*59 )/(590/60 min)                 𝑇    Ë                             10 min
+                                                        ^TE8353, Thv‘
+                                                                                     √
+G                                                                                   � max(𝑃8310 * 𝑃8351 , 0)                       G1/G2
+2
+                                         4              G1/G2                   �                  CV8351                                              A
+                                                        �(𝑇 𝐸8351 * 4.6)      CV8351
+                                                 2      ℎ(300K, 𝑃8351 ) * ℎ(𝑇8351 , 𝑃8351 )                  𝐹 𝑇 8351         TE8351                          300 K
+
+
+                                         3              𝑇 𝐸8351 * 𝑇 𝐸8352 𝑇 𝐸8352 * 𝑇 𝐸8353 𝑃 𝑇 8351 *
+                                                        𝑃 𝑇 8352
+                                    3                   Thv * 𝑇 𝐸8353 𝐹 𝑇 8351(Thv * 𝑇 𝐸8353) Thv *
+                                                        𝑇 𝐸8310
+                                             2          ∆𝐸𝐶-𝑉 2       ∆𝐶𝑂𝑂𝐿𝐷𝑂𝑊 𝑁
+
+
+                                                                     Lookback sensitivity on the complete 0715-BACK test sequence
+
+
+                             1.30
+                                                       Minimum: 60 samples, 1.180 K
+    Complete-test RMSE (K)
+
+
+
+
+                             1.25
+
+
+                             1.20
+
+
+                             1.15
+
+
+                             1.10
+
+                                         15                  30          40    45     50    55     60   65       70    75               90                             120
+                                                                                                        Lookback
+
+
+                                                                                Individual seeds         Numerical minimum          Mean ± SD
+
+
+
+    1:                              15           Thv                                                                                         ,                          Original
+0715-BACK
+
+
+
+K                                            𝐿 = 60                                 1.180 , 0.039                2        4                      GRU–MLP–GNN
+K                                                65 90        120                           1.185                      RMSE 1.142 K                GRU–         KAN–GNN
+1.188                               1.192 K                                                                      1.150 K                         GRU                 2.92%
+                                                       𝐿 = 60                 600 s                       2.25%                   95%
+                                                                                                                                   MLP       KAN
+                                                                                                                                                       1.142–1.152 K
+                                                                                                                      MLP–GNN–GRU                   KAN–GNN–GRU
+5.3.
+                                                                                                                          2.381     2.154 K
+                                                                                           20
+                                                                                                                                  MLP                      4.590 K
+
+
+
+                                             : Preprint submitted to Elsevier                                                                                        Page 5 of 9
+                                                                                       –
+
+                       Seed-wise RMSE across model architectures
+
+
+                                                                                                                                                4.5
+                 42       1.169          1.232          1.208         1.179          1.129         1.147          2.119          2.103
+
+
+
+                 52       1.208          1.239          1.172         1.157          1.234         1.135          2.095          2.196
+                                                                                                                                                4.0
+
+
+                 62       1.140          1.188          1.127         1.080          1.106         1.124          2.070          2.011
+
+                                                                                                                                                3.5
+                 72       1.159          1.202          1.161         1.184          1.056         1.127          2.090          2.078
+   Random seed
+
+
+
+
+                                                                                                                                                      Test RMSE (K)
+                 82       1.179           1.113         1.131         1.132          1.197         1.071          2.298          2.019          3.0
+
+
+                 92       1.182          1.132          1.032         1.159          1.186         1.147          2.180          2.654
+                                                                                                                                                2.5
+
+                 102      1.129          1.184          1.104         1.142          1.070            1.111       2.109          2.082
+
+
+                                                                                                                                                2.0
+                 112      1.235          1.199          1.192         1.228          1.195         1.212          4.590          2.203
+
+
+
+                 122      1.157          1.270          1.141         1.147          1.187         1.193          2.172          2.195
+                                                                                                                                                1.5
+
+
+                 132      1.206          1.171          1.151         1.090          1.091         1.251          2.085          1.995
+
+                          GRU            LSTM         P-GRU–MLP    P-GRU–KAN      P-LSTM–MLP    P-LSTM–KAN      S-MLP–GRU   S-KAN–GRU
+
+                                                                      Model architecture
+
+
+  2:                                              Original 0715-BACK                           RMSE
+
+
+
+
+  4
+                                            10
+
+                                                                               RMSE (K)           MAE (K)            P95 (K)             𝑅2
+
+                          GRU                                     26,657      1.176 , 0.033    0.323 , 0.025     1.304 , 0.233     0.99786
+                          LSTM                                    32,161      1.193 , 0.048    0.337 , 0.034     1.450 , 0.129     0.99780
+                                  GRU–MLP–GNN                     87,059      1.142 , 0.049    0.302 , 0.014     1.338 , 0.145     0.99798
+                                  GRU–            KAN–GNN         87,193      1.150 , 0.044    0.294 , 0.012     1.248 , 0.172     0.99795
+                                  LSTM–MLP–GNN                    92,563      1.145 , 0.062    0.308 , 0.011     1.322 , 0.137     0.99797
+                                  LSTM–           KAN–GNN         92,697      1.152 , 0.053    0.302 , 0.017     1.324 , 0.151     0.99795
+                                  MLP–GNN–GRU                     91,411      2.381 , 0.779    0.936 , 0.509     4.814 , 1.957     0.99040
+                                      KAN–GNN–GRU                 91,545      2.154 , 0.193    0.765 , 0.128     4.177 , 0.277     0.99278
+
+                                TCN                                            P95               95
+
+
+
+                  GRU                                                                                                            MAE          P95
+                                                                                      RMSE                    0.008 K
+                                                                                                  –                                      KAN
+                                                                                                   GRU–            KAN–GNN
+5.4.
+                                                     RMSE
+                                                                                                                                 KAN                   MLP
+GRU–MLP–GNN
+                                   GRU–             KAN–GNN
+
+
+                           : Preprint submitted to Elsevier                                                                                    Page 6 of 9
+                                                                     –
+
+     5                                                               6.2.
+                              RMSE                                              –GRU
+                                               RMSE (K)                                             GRU
+
+               20                            1.181 , 0.050
+                20                           0.960 , 0.033
+                                             1.057 , 0.065                                                      GNN
+                                             1.011 , 0.051
+                                             1.002 , 0.043                                                GRU
+                2                            0.948 , 0.047
+
+
+
+5.5.
+                                      GRU–         KAN–GNN           6.3.
+                                                                                                              RMSE          0.96
+
+     20                   RMSE        0.960 , 0.033 K                K MAE       0.22 K                         1.978 K
+
+          20                   1.181 , 0.050 K           18.75%                                          𝑅 ù 0.999
+                                                                                                          2
+
+
+10                                 Holm                 Wilcoxon                                                      𝑅2
+
+          𝑝 = 0.0176                                         RMSE                                                20 K
+
+          1.057 K                          10.13%
+𝑝 = 0.0313
+                                             RMSE
+5.27%           4.36%                                         0.05                                  15
+                                                                         𝑡+15   Thv
+
+
+                                                   0.946 K                                          𝑡+1       𝑡+𝐻
+
+
+                                                                                                                           MPC
+
+                                                 0.960 K
+0.948 K
+                                                                     6.4.
+                                  +                     +
+
+                                                                                      3%       5%
+
+6.
+6.1.                 60                                                  RMSE
+                                                                                                         20                10
+                                              15               60
+
+
+                Thv                   60
+                                  GRU
+                                                        60
+                                                                     0715-BACK             –
+
+
+
+
+                     : Preprint submitted to Elsevier                                                                Page 7 of 9
+                                                                   –
+
+7.                                                                     and the open-source thermophysical property library cool-
+                                                                       prop. Industrial and Engineering Chemistry Research 53,
+                                                                       2498–2508. doi:10.1021/ie4033999.
+                                                  –                 [2] Chen, R.T.Q., Rubanova, Y., Bettencourt, J., Duvenaud,
+                                                                       D.K., 2018.     Neural ordinary differential equations, in:
+                                     60
+                                                                       Advances in Neural Information Processing Systems.
+                       GNN                                   15     [3] Cho, K., van Merriënboer, B., Gulcehre, C., Bahdanau,
+                                                                       D., Bougares, F., Schwenk, H., Bengio, Y., 2014. Learn-
+            Huber                                                      ing phrase representations using rnn encoder–decoder for
+                                                                       statistical machine translation, in: Proceedings of the 2014
+                                60
+                                                                       Conference on Empirical Methods in Natural Language
+                         RMSE                 –                        Processing, pp. 1724–1734. doi:10.3115/v1/D14-1179.
+                            –                MLP                    [4] Costa, E.A., Rebello, C.M., Santana, V.V., Nogueira, I.B.R.,
+         RMSE                KAN                       RMSE            2024. Machine learning multi-step-ahead modelling with
+                                                                       uncertainty assessment.     IFAC-PapersOnLine 58, 25–30.
+              MAE        P95
+                                                                       doi:10.1016/j.ifacol.2024.08.308.
+                                                                    [5] Faridi, I.K., Tsotsas, E., Heineken, W., Koegler, M.,
+                                                                       Kharaghani, A., 2023. Spatio-temporal prediction of tem-
+                                                                       perature in fluidized bed biomass gasifier using dynamic
+                                                                       recurrent neural network method. Applied Thermal Engi-
+                                                                       neering 219, 119334. doi:10.1016/j.applthermaleng.2022.
+                                                                       119334.
+                                                                    [6] Gilmer, J., Schoenholz, S.S., Riley, P.F., Vinyals, O., Dahl,
+                                                                       G.E., 2017. Neural message passing for quantum chemistry,
+                                                                       in: Proceedings of the 34th International Conference on
+                                                                       Machine Learning, pp. 1263–1272.
+                                                                    [7] Guida, P., Roberts, W.L., 2026. Data-driven prediction of
+                                                                       interface evolution in multiphase flows using fourier neural
+                                                                       operators. Energy and AI 25, 100775. doi:10.1016/j.egyai.
+                                                                       2026.100775.
+                                                                    [8] He, Y.L., Liu, J.F., Yang, B., Zhao, D., 2025.         Novel
+                                                                       input space-relevant distributed extreme learning machine
+                                                                       integrated with lstm for industrial soft sensing.       IEEE
+                                                                       Sensors Journal 25, 23126–23134. doi:10.1109/JSEN.2025.
+                                                                       3565814.
+                                                                    [9] Hochreiter, S., Schmidhuber, J., 1997.     Long short-term
+                                                                       memory. Neural Computation 9, 1735–1780. doi:10.1162/
+                                                                       neco.1997.9.8.1735.
+                    Conceptualization Methodology                  [10] Huber, P.J., 1964. Robust estimation of a location param-
+                                                                       eter. The Annals of Mathematical Statistics 35, 73–101.
+Software Data curation Validation Formal analy-
+                                                                       doi:10.1214/aoms/1177703732.
+sis Visualization Writing–original draft Writing–                  [11] Kingma, D.P., Ba, J., 2015. Adam: A method for stochas-
+review & editing Supervision              Funding acquisition          tic optimization, in: International Conference on Learning
+                                                                       Representations.
+                                                                   [12] Li, H., Guo, M., Weng, Y., Tong, H., 2026.            Neural
+                                                                       predictive control to coordinate discrete- and continuous-
+                                                                       time models for time-series analysis with control-theoretical
+                                                                       improvements, in: Proceedings of the 32nd ACM SIGKDD
+                                                                       Conference on Knowledge Discovery and Data Mining.
+                                                                       doi:10.1145/3770854.3780261.
+                                                                   [13] Liu, Z., Wang, Y., Vaidya, S., Ruehle, F., Halverson,
+
+[1] Bell, I.H., Wronski, J., Quoilin, S., Lemort, V., 2014. Pure       J., Soljačić, M., Hou, T.Y., Tegmark, M., 2025.          Kan:
+
+     and pseudo-pure fluid thermophysical property evaluation
+
+
+                : Preprint submitted to Elsevier                                                                        Page 8 of 9
+                                                                     –
+
+     Kolmogorov–arnold networks, in: The Thirteenth Inter-
+     national Conference on Learning Representations.       URL:
+     https://openreview.net/forum?id=Ozo7qJ5vZi.
+[14] Raissi, M., Perdikaris, P., Karniadakis, G.E., 2019. Physics-
+     informed neural networks: A deep learning framework for
+     solving forward and inverse problems involving nonlinear
+     partial differential equations.   Journal of Computational
+     Physics 378, 686–707. doi:10.1016/j.jcp.2018.10.045.
+[15] Runje, D., Shankaranarayana, S.M., 2023.        Constrained
+     monotonic neural networks, in: Proceedings of the 40th
+     International Conference on Machine Learning, pp. 29338–
+     29353.
+[16] Tan, P., Zhu, H., He, Z., Jin, Z., Zhang, C., Fang, Q.,
+     Chen, G., 2022.     Multi-step ahead prediction of reheat
+     steam temperature of a 660 mw coal-fired utility boiler using
+     long short-term memory. Frontiers in Energy Research 10,
+     845328. doi:10.3389/fenrg.2022.845328.
+[17] Tang, P., Yuan, Z., Yu, Y., Gao, B., 2026. Monotonicity-
+     constrained physics-informed deep neural network for chiller
+     energy consumption prediction: Extrapolation performance
+     and constraint improvement. Energy and Buildings 359,
+     117299. doi:10.1016/j.enbuild.2026.117299.
+[18] Zapata Gonzalez, D., Meyer, M., Zalipski, K., Müller, O.,
+     2026. Temporal causal feature selection for robust machine
+     learning modelling of data center operations.       Applied
+     Energy 417, 127984. doi:10.1016/j.apenergy.2026.127984.
+
+
+
+
+                 : Preprint submitted to Elsevier                        Page 9 of 9
+

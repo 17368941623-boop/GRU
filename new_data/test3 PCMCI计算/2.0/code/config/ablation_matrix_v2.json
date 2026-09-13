@@ -1,0 +1,191 @@
+{
+  "schema_version": "2.0",
+  "fair_comparison_contract": {
+    "forecast_steps": 30,
+    "lookback_steps": 60,
+    "same_parent_split": true,
+    "same_scalers_and_loss": true,
+    "same_seed_list": [
+      42,
+      52,
+      62,
+      72,
+      82,
+      92,
+      102,
+      112,
+      122,
+      132
+    ],
+    "note": "The 0912 Raw54-GRU result used 15 steps and must be rerun at 30 steps for the final five-minute table."
+  },
+  "control_modes": {
+    "primary": {
+      "name": "history_only",
+      "future_control_sequence": false,
+      "reason": "matches deployment when future valve openings are unknown"
+    },
+    "secondary": {
+      "name": "known_plan_only",
+      "future_control_sequence": true,
+      "reason": "for MPC candidate trajectories supplied before prediction; never use recorded future values as a proxy for a plan"
+    },
+    "comparison_rule": "all models in one table must use the same control mode"
+  },
+  "models": [
+    {
+      "id": "A0",
+      "name": "Raw54-GRU-5min",
+      "global_gru": true,
+      "mixed_rep": false,
+      "static_gnn": false,
+      "pcmci_lags": false,
+      "branch_kan": false,
+      "hmix_kan": false,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A1",
+      "name": "MixedRep-GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": false,
+      "pcmci_lags": false,
+      "branch_kan": false,
+      "hmix_kan": false,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A2",
+      "name": "Static-GNN+GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": false,
+      "branch_kan": false,
+      "hmix_kan": false,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A3",
+      "name": "PCMCI-Lag-GNN+GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": true,
+      "branch_kan": false,
+      "hmix_kan": false,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A4",
+      "name": "PCMCI-Lag-GNN+BranchKAN+GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": true,
+      "branch_kan": true,
+      "hmix_kan": false,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A5",
+      "name": "PCMCI-Lag-GNN+HmixKAN+GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": true,
+      "branch_kan": false,
+      "hmix_kan": true,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A6",
+      "name": "Parallel-GNN+KAN+GRU",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": true,
+      "branch_kan": true,
+      "hmix_kan": true,
+      "optional_pcmci": false
+    },
+    {
+      "id": "A7",
+      "name": "Parallel-GNN+KAN+GRU+OptionalPCMCI",
+      "global_gru": true,
+      "mixed_rep": true,
+      "static_gnn": true,
+      "pcmci_lags": true,
+      "branch_kan": true,
+      "hmix_kan": true,
+      "optional_pcmci": true
+    }
+  ],
+  "execution_stages": [
+    {
+      "stage": "smoke",
+      "models": [
+        "A0",
+        "A2",
+        "A6"
+      ],
+      "seeds": [
+        42
+      ],
+      "purpose": "shape, leakage and convergence checks"
+    },
+    {
+      "stage": "screen",
+      "models": [
+        "A0",
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7"
+      ],
+      "seeds": [
+        42,
+        72,
+        102
+      ],
+      "purpose": "screen modules before expensive repeats"
+    },
+    {
+      "stage": "final",
+      "models": [
+        "A0",
+        "A3",
+        "A4",
+        "A5",
+        "A6"
+      ],
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "purpose": "paper table and seed-distribution inference"
+    }
+  ],
+  "required_outputs": [
+    "overall RMSE, MAE and R2 per seed",
+    "horizon RMSE/MAE at 50, 100, 150, 200 and 300 s",
+    "rapid-cooling subset and valve-event subset metrics",
+    "seed mean, standard deviation and 95% confidence interval",
+    "paired per-window errors against A0 on the same validation samples",
+    "parameter count, training time and peak GPU memory",
+    "learned lag-attention weights and KAN response curves",
+    "full validation predictions and prediction indices"
+  ]
+}

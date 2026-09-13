@@ -1,0 +1,65 @@
+{
+  "study": "stage1_global_gru_lookback_hidden_search",
+  "study_type": "paired validation-only coarse two-dimensional search",
+  "target": "Delta Thv(t+15)=Thv(t+15)-Thv(t), restored to absolute Thv for metrics",
+  "lookbacks": [
+    15,
+    30,
+    45,
+    60,
+    75,
+    90
+  ],
+  "hidden_sizes": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "common_origin_lookback": 90,
+  "predict_steps": 15,
+  "history_input": "all enabled raw signals through forecast origin t",
+  "known_future_control_input": "all enabled raw valve commands u(t)..u(t+14)",
+  "engineered_features_used": false,
+  "pcmci_used": false,
+  "gru_layers": 1,
+  "control_hidden_size": 32,
+  "fusion_hidden_size": 64,
+  "dropout": 0.1,
+  "training_loss": "weighted Huber; train-defined lowest-delta 10% receives weight 3",
+  "checkpoint_selection_metric": "validation_rmse_k",
+  "model_selection_split": "val_clean.pkl, Original validation trajectory only",
+  "test_policy": "Training, preflight and validation summary never deserialize test_clean.pkl or test_full_clean.pkl.",
+  "expected_runs": 120,
+  "coarse_region_rule": "cells with mean validation RMSE no greater than the global minimum mean plus the standard error of that minimum cell",
+  "replication_note": "five seeds quantify optimization variability and are not five independent process experiments",
+  "observed_runs": 120,
+  "complete": true,
+  "test_data_read_by_training": false,
+  "global_minimum": {
+    "lookback": 90,
+    "hidden_size": 128,
+    "validation_rmse_k_mean": 0.11131434255918142,
+    "validation_rmse_k_sd": 0.013982957477173203,
+    "validation_rmse_k_se": 0.006253368689089649
+  },
+  "one_se_threshold_k": 0.11756771124827106,
+  "candidate_region_observed_bounds": {
+    "lookback_min": 30,
+    "lookback_max": 90,
+    "hidden_size_min": 128,
+    "hidden_size_max": 256
+  },
+  "boundary_warning": {
+    "lookback_on_boundary": true,
+    "hidden_size_on_boundary": true
+  },
+  "statistical_caution": "SD and SE are computed across optimization seeds. They describe training variability, not independent-process generalization uncertainty."
+}

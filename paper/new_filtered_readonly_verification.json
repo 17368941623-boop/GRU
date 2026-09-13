@@ -1,0 +1,101 @@
+{
+  "file_count": 9,
+  "schema_and_row_counts_match_merged": true,
+  "time_columns_unchanged": true,
+  "files": [
+    {
+      "file": "HTC8300趋势图-251130-ALL.csv",
+      "rows": 22740,
+      "columns": 176,
+      "blank_numeric_cells": 704940
+    },
+    {
+      "file": "HTC8300趋势图-251226-ALL.csv",
+      "rows": 21150,
+      "columns": 176,
+      "blank_numeric_cells": 655650
+    },
+    {
+      "file": "HTC8300趋势图-260118-ALL.csv",
+      "rows": 18900,
+      "columns": 176,
+      "blank_numeric_cells": 586224
+    },
+    {
+      "file": "HTC8300趋势图-260403-ALL.csv",
+      "rows": 21510,
+      "columns": 176,
+      "blank_numeric_cells": 666810
+    },
+    {
+      "file": "HTC8300趋势图-260428-ALL.csv",
+      "rows": 22320,
+      "columns": 176,
+      "blank_numeric_cells": 691920
+    },
+    {
+      "file": "HTC8300趋势图-260617-ALL.csv",
+      "rows": 22680,
+      "columns": 176,
+      "blank_numeric_cells": 703080
+    },
+    {
+      "file": "HTC8300趋势图-260623-BACK-ALL.csv",
+      "rows": 7290,
+      "columns": 176,
+      "blank_numeric_cells": 225990
+    },
+    {
+      "file": "HTC8300趋势图-260715-ALL.csv",
+      "rows": 19260,
+      "columns": 176,
+      "blank_numeric_cells": 597060
+    },
+    {
+      "file": "HTC8300趋势图-260721-BACK-ALL.csv",
+      "rows": 9720,
+      "columns": 176,
+      "blank_numeric_cells": 301320
+    }
+  ],
+  "total_blank_numeric_cells": 5132994,
+  "all_blank_signals_in_every_filtered_file": [
+    "EC-B-T",
+    "FC-A-T",
+    "FC-B-T",
+    "FC-C-T",
+    "FC-E-T",
+    "FC-G-T",
+    "HV1-T1",
+    "HV1-T2",
+    "HV2-T1",
+    "HV2-T2",
+    "HV3-T1",
+    "HV3-T2",
+    "HV4-T1",
+    "HV4-T2",
+    "HV5-T1",
+    "HV5-T2",
+    "HV6-T1",
+    "HV6-T2",
+    "HV7-T1",
+    "HV7-T2",
+    "HV8-T1",
+    "HV8-T2",
+    "LA-T1",
+    "LB-T1",
+    "LB-T2",
+    "LB-T3",
+    "LB-T4",
+    "LB-T5",
+    "LB-T6",
+    "LG-T1",
+    "LG-T2"
+  ],
+  "all_blank_signal_count": 31,
+  "other_columns_with_blanks": {
+    "TCD": 107,
+    "TEF": 109,
+    "THV": 108
+  }
+}

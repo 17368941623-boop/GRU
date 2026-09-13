@@ -1,0 +1,8 @@
+# Recommended interpreter: Python 3.10 (tested with Python 3.10.20)
+# Install with: python -m pip install -r requirement.txt
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.15.3
+statsmodels==0.15.0
+joblib==1.5.3
+tigramite==5.2.10.1

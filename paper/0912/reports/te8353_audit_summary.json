@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "new_files_checked": 27,
+  "new_files_missing_te8353_column": 0,
+  "new_te8353_missing_values": 0,
+  "legacy_new_process_pairs_compared": 7,
+  "decision": "No backfill is needed when status is PASS; preserve the newer complete exports."
+}
