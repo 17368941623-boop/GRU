@@ -1,0 +1,180 @@
+{
+  "selection_status": "selected_without_opening_test_data",
+  "selection_split": "Original 260501 validation only",
+  "primary_metric": "mean rapid_validation_rmse_k across search seeds",
+  "tie_breakers": [
+    "mean validation_rmse_k",
+    "rapid_validation_rmse_std_k",
+    "trainable_parameters"
+  ],
+  "lookback": 60,
+  "common_origin_lookback": 60,
+  "predict_steps": 15,
+  "search_seeds": [
+    42,
+    62
+  ],
+  "test_data_read": false,
+  "models": {
+    "gru_baseline": {
+      "config_id": "hh64",
+      "model_config": {
+        "model_name": "gru_baseline",
+        "history_hidden": 64,
+        "graph_hidden": 64,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 3,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6786110906828221,
+      "validation_rmse_mean_k": 0.1899386992092087,
+      "rapid_validation_rmse_std_k": 0.00348379841903178,
+      "trainable_parameters": 26657
+    },
+    "parallel_gru_kan_gnn": {
+      "config_id": "hh64_gh64_gs2_kg8",
+      "model_config": {
+        "model_name": "parallel_gru_kan_gnn",
+        "history_hidden": 64,
+        "graph_hidden": 64,
+        "graph_sweeps": 2,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 3,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6639862215431984,
+      "validation_rmse_mean_k": 0.18473500483390917,
+      "rapid_validation_rmse_std_k": 0.02507738013955985,
+      "trainable_parameters": 87193
+    },
+    "parallel_gru_mlp_gnn": {
+      "config_id": "hh64_gh32_gs1",
+      "model_config": {
+        "model_name": "parallel_gru_mlp_gnn",
+        "history_hidden": 64,
+        "graph_hidden": 32,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 3,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6694568310380968,
+      "validation_rmse_mean_k": 0.18690785748236177,
+      "rapid_validation_rmse_std_k": 0.013016361020343611,
+      "trainable_parameters": 39706
+    },
+    "serial_kan_gnn_gru": {
+      "config_id": "hh64_gh32_gs2_kg12",
+      "model_config": {
+        "model_name": "serial_kan_gnn_gru",
+        "history_hidden": 64,
+        "graph_hidden": 32,
+        "graph_sweeps": 2,
+        "edge_hidden": 32,
+        "kan_grid": 12,
+        "tcn_levels": 3,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6673410379176082,
+      "validation_rmse_mean_k": 0.17923901536318576,
+      "rapid_validation_rmse_std_k": 0.007155751206050775,
+      "trainable_parameters": 45969
+    },
+    "serial_kan_gnn_tcn": {
+      "config_id": "hh64_gh64_gs1_kg5_tl5",
+      "model_config": {
+        "model_name": "serial_kan_gnn_tcn",
+        "history_hidden": 64,
+        "graph_hidden": 64,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 5,
+        "tcn_levels": 5,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6808880897282934,
+      "validation_rmse_mean_k": 0.18266057759109722,
+      "rapid_validation_rmse_std_k": 0.007879018733294425,
+      "trainable_parameters": 114204
+    },
+    "serial_mlp_gnn_gru": {
+      "config_id": "hh64_gh64_gs1",
+      "model_config": {
+        "model_name": "serial_mlp_gnn_gru",
+        "history_hidden": 64,
+        "graph_hidden": 64,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 3,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6861179575947551,
+      "validation_rmse_mean_k": 0.185818096359198,
+      "rapid_validation_rmse_std_k": 0.005745169480004746,
+      "trainable_parameters": 72570
+    },
+    "serial_mlp_gnn_tcn": {
+      "config_id": "hh64_gh64_gs1_tl5",
+      "model_config": {
+        "model_name": "serial_mlp_gnn_tcn",
+        "history_hidden": 64,
+        "graph_hidden": 64,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 5,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6810417205999453,
+      "validation_rmse_mean_k": 0.18706569616117008,
+      "rapid_validation_rmse_std_k": 0.015763012921594332,
+      "trainable_parameters": 114170
+    },
+    "tcn_baseline": {
+      "config_id": "hh32_tl4",
+      "model_config": {
+        "model_name": "tcn_baseline",
+        "history_hidden": 32,
+        "graph_hidden": 64,
+        "graph_sweeps": 1,
+        "edge_hidden": 32,
+        "kan_grid": 8,
+        "tcn_levels": 4,
+        "tcn_kernel": 3,
+        "control_hidden": 32,
+        "fusion_hidden": 64,
+        "dropout": 0.1
+      },
+      "rapid_validation_rmse_mean_k": 0.6893954461133218,
+      "validation_rmse_mean_k": 0.20517373071656975,
+      "rapid_validation_rmse_std_k": 0.007930429097030475,
+      "trainable_parameters": 21441
+    }
+  }
+}

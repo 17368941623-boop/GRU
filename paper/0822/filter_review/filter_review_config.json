@@ -1,0 +1,40 @@
+{
+  "mode": "review",
+  "input_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0822\\original_data",
+  "reviewed_file_rule": "raw unaugmented *.csv only",
+  "reviewed_files": 9,
+  "temperature_candidates": [
+    "causal_fill_only",
+    "causal_median_3",
+    "causal_ewma_20s"
+  ],
+  "pressure_flow_candidates": [
+    "causal_fill_only",
+    "causal_median_3",
+    "causal_ewma_20s",
+    "causal_ewma_40s",
+    "causal_ewma_60s"
+  ],
+  "max_ffill_steps": 6,
+  "temperature_flypoint_guard_enabled": true,
+  "flypoint_drop_threshold_k": 5.0,
+  "flypoint_recovery_steps": 2,
+  "flypoint_recovery_tolerance_k": 2.0,
+  "flypoint_guard_implementation": "exact_recovery_test_with_bounded_lookahead",
+  "bounded_temperature_lookahead_steps": 2,
+  "downstream_endpoint_exclusion_required": true,
+  "event_windows_per_file": 2,
+  "event_radius_samples": 180,
+  "plots_requested": false,
+  "plots_generated": false,
+  "causal_only": false,
+  "backward_fill": false,
+  "centered_filter": false,
+  "valve_filtering": false,
+  "valve_smoothing": false,
+  "valve_negative_clamp_in_apply_mode": true,
+  "valve_minimum": 0.0,
+  "valve_zero_is_valid": true,
+  "data_split": false,
+  "label_creation": false
+}

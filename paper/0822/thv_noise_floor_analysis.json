@@ -1,0 +1,68 @@
+{
+  "method": "Robust local-linear residual estimate: MAD of the second difference divided by 0.67449*sqrt(6). This preserves the source data and estimates only the high-frequency component; slow calibration drift is outside this estimate.",
+  "interpretation": "For a perfect latent-state forecast, observed-target RMSE cannot normally be much below roughly one sensor-noise sigma. A residual forecast that cannot separate current measurement noise can have a floor approaching sqrt(2)*sigma.",
+  "splits": [
+    {
+      "file": "val_clean.pkl",
+      "rows": 26132,
+      "segments": 4,
+      "thv_range_k": [
+        2.91550707817078,
+        296.642303466797
+      ],
+      "smallest_positive_recorded_increment_k": 4.768371599794818e-07,
+      "all_contiguous_pairs": 26128,
+      "event_free_contiguous_pairs": 19848,
+      "robust_sigma_from_first_difference_k": 0.010451327529201599,
+      "robust_sigma_from_second_difference_k": 0.005500210904726627,
+      "event_free_sigma_from_first_difference_k": 0.010159888109661746,
+      "event_free_sigma_from_second_difference_k": 0.005575467302722515,
+      "absolute_second_difference_percentiles_k": {
+        "50": 0.009094238281988964,
+        "75": 0.017419815063524968,
+        "90": 0.028641414642288688,
+        "95": 0.03824014663696848,
+        "99": 0.06173355102477985
+      },
+      "delta15_rmse_persistence_k": 0.8212558218478421,
+      "delta15_absolute_percentiles_k": {
+        "50": 0.07565307617190697,
+        "75": 0.2601947784425036,
+        "90": 0.3726013183591905,
+        "95": 0.7235008239741346,
+        "99": 1.4464760589599492
+      }
+    },
+    {
+      "file": "test_full_clean.pkl",
+      "rows": 10925,
+      "segments": 2,
+      "thv_range_k": [
+        1.52418875694275,
+        121.686965942383
+      ],
+      "smallest_positive_recorded_increment_k": 2.384185702197783e-07,
+      "all_contiguous_pairs": 10923,
+      "event_free_contiguous_pairs": 9340,
+      "robust_sigma_from_first_difference_k": 0.003889691467272064,
+      "robust_sigma_from_second_difference_k": 0.0026419830049717354,
+      "event_free_sigma_from_first_difference_k": 0.0032458253048545252,
+      "event_free_sigma_from_second_difference_k": 0.0023357623398293265,
+      "absolute_second_difference_percentiles_k": {
+        "50": 0.004364967346200288,
+        "75": 0.00925779342651012,
+        "90": 0.017604827880902008,
+        "95": 0.026588439941505726,
+        "99": 0.09012060165405374
+      },
+      "delta15_rmse_persistence_k": 1.953839154733782,
+      "delta15_absolute_percentiles_k": {
+        "50": 0.019721508026120382,
+        "75": 0.12545394897459516,
+        "90": 1.2671142578127996,
+        "95": 3.8261291503905985,
+        "99": 6.565060272216804
+      }
+    }
+  ]
+}
