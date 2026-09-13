@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "study": "graph",
+  "shard_index": 2,
+  "num_shards": 5,
+  "completed_in_shard": 8,
+  "total_in_shard": 8,
+  "elapsed_seconds": 51678.93806695938,
+  "current_run": null,
+  "test_data_read": false
+}

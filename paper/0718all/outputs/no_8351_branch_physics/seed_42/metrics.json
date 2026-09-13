@@ -1,0 +1,78 @@
+{
+  "experiment": "no_8351_branch_physics",
+  "removed_group": "branch_8351_physics",
+  "seed": 42,
+  "look_back": 60,
+  "predict_steps": 60,
+  "target": "TE8353",
+  "test_file": "test_clean.pkl",
+  "feature_count": 35,
+  "feature_columns": [
+    "TE8353",
+    "TE8308 ValueY",
+    "TE8309 ValueY",
+    "TE8310 ValueY",
+    "TE8351 ValueY",
+    "TE8352 ValueY",
+    "A管 ValueY",
+    "B管 ValueY",
+    "FT8351 ValueY",
+    "PT8310 ValueY",
+    "PT8351 ValueY",
+    "PT8352 ValueY",
+    "PT8390 ValueY",
+    "PT8391 ValueY",
+    "CV8359 ValueY",
+    "CV8350 ValueY",
+    "CV8330 ValueY",
+    "CV8339 ValueY",
+    "Thv ValueY",
+    "DTbr ValueY",
+    "Tef ValueY",
+    "Tcd ValueY",
+    "CV8300 ValueY",
+    "CV8313 ValueY",
+    "CV8310 ValueY",
+    "CV8351 ValueY",
+    "CV8312 ValueY",
+    "CV8311 ValueY",
+    "CV8310_diff",
+    "CV8310_ratio",
+    "Pseudo_Mass_Flow",
+    "Pseudo_Cooling_Power",
+    "Pseudo_Mass_Flow_8310",
+    "Pseudo_Cooling_Power_8310",
+    "TE8353_TE8310_diff"
+  ],
+  "train_source_groups": [
+    "HTC8300趋势图-F-0118.csv",
+    "HTC8300趋势图-F-0403.csv"
+  ],
+  "validation_source_groups": [
+    "HTC8300趋势图-F-0501.csv"
+  ],
+  "test_source_groups": [
+    "HTC8300趋势图-F-1226.csv"
+  ],
+  "validation_metrics": {
+    "mae_k": 6.3505635261535645,
+    "rmse_k": 8.247213644495286,
+    "r2": 0.2597125768661499,
+    "bias_k": -6.010478496551514,
+    "p95_absolute_error_k": 20.32014274597168,
+    "max_absolute_error_k": 31.23810386657715,
+    "n_windows": 58220
+  },
+  "test_metrics": {
+    "mae_k": 1.4437885284423828,
+    "rmse_k": 3.7914953228029855,
+    "r2": 0.8042990565299988,
+    "bias_k": 0.3140498399734497,
+    "p95_absolute_error_k": 6.066251277923584,
+    "max_absolute_error_k": 36.23589324951172,
+    "n_windows": 3288
+  },
+  "training_rows": 157880,
+  "validation_rows": 59400,
+  "test_rows": 3406
+}

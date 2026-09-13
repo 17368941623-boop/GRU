@@ -1,0 +1,79 @@
+{
+  "study": "Thv h15 lookback-65 controlled model comparison and ablation",
+  "target": "Delta Thv at t+15, restored to absolute Thv for metrics",
+  "history_window": 65,
+  "known_future_controls": "u(t) through u(t+14); no future measurements",
+  "common_origin_lookback": 120,
+  "training_split": "train_clean.pkl excluding 0617-ALL by the existing loader contract",
+  "validation_split": "Original 260501",
+  "held_out_test_split": "Original 0715-BACK",
+  "checkpoint_metric": "Original 260501 rapid-cooling RMSE",
+  "rapid_threshold": "training-set 10th percentile of the 15-step Thv change",
+  "loss": "rapid-weighted Huber loss; rapid samples receive weight 3",
+  "scalers": "fit on training data only",
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "model_count": 7,
+  "expected_training_runs": 70,
+  "model_specs": [
+    {
+      "model": "gru_baseline",
+      "config_id": "controlled_hh64",
+      "paper_role": "temporal baseline and no-graph ablation"
+    },
+    {
+      "model": "lstm_baseline",
+      "config_id": "controlled_hh64",
+      "paper_role": "recurrent temporal-encoder comparator"
+    },
+    {
+      "model": "tcn_baseline",
+      "config_id": "controlled_hh64_tl6",
+      "paper_role": "convolutional temporal-encoder comparator"
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "paper_role": "serial topology with unconstrained MLP edge gates"
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "paper_role": "serial topology with monotonic KAN valve gates"
+    },
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "paper_role": "parallel topology with unconstrained MLP edge gates"
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "paper_role": "proposed parallel temporal/physical model"
+    }
+  ],
+  "controlled_model_config": {
+    "history_hidden": 64,
+    "graph_hidden": 64,
+    "graph_sweeps": 2,
+    "edge_hidden": 32,
+    "kan_grid": 8,
+    "tcn_levels": 6,
+    "tcn_kernel": 3,
+    "control_hidden": 32,
+    "fusion_hidden": 64,
+    "dropout": 0.1
+  },
+  "test_gate": "selected_configs.json is created only after every expected development run passes its metadata audit",
+  "test_data_read_at_protocol_creation": false
+}

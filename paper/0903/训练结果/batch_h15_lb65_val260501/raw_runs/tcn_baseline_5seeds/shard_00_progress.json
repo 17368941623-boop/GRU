@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "study": "tcn",
+  "shard_index": 0,
+  "num_shards": 1,
+  "completed_in_shard": 5,
+  "total_in_shard": 5,
+  "elapsed_seconds": 6338.614466190338,
+  "current_run": null,
+  "test_data_read": false
+}

@@ -1,0 +1,71 @@
+{
+  "experiment": "core",
+  "removed_group": null,
+  "seed": 42,
+  "look_back": 60,
+  "predict_steps": 60,
+  "target": "TE8353",
+  "test_file": "test_clean.pkl",
+  "feature_count": 28,
+  "feature_columns": [
+    "TE8353",
+    "TE8308 ValueY",
+    "TE8309 ValueY",
+    "TE8310 ValueY",
+    "TE8351 ValueY",
+    "TE8352 ValueY",
+    "A管 ValueY",
+    "B管 ValueY",
+    "FT8351 ValueY",
+    "PT8310 ValueY",
+    "PT8351 ValueY",
+    "PT8352 ValueY",
+    "PT8390 ValueY",
+    "PT8391 ValueY",
+    "CV8359 ValueY",
+    "CV8350 ValueY",
+    "CV8330 ValueY",
+    "CV8339 ValueY",
+    "Thv ValueY",
+    "DTbr ValueY",
+    "Tef ValueY",
+    "Tcd ValueY",
+    "CV8300 ValueY",
+    "CV8313 ValueY",
+    "CV8310 ValueY",
+    "CV8351 ValueY",
+    "CV8312 ValueY",
+    "CV8311 ValueY"
+  ],
+  "train_source_groups": [
+    "HTC8300趋势图-F-0118.csv",
+    "HTC8300趋势图-F-0403.csv"
+  ],
+  "validation_source_groups": [
+    "HTC8300趋势图-F-0501.csv"
+  ],
+  "test_source_groups": [
+    "HTC8300趋势图-F-1226.csv"
+  ],
+  "validation_metrics": {
+    "mae_k": 6.394763946533203,
+    "rmse_k": 10.512158574968009,
+    "r2": -0.2027343511581421,
+    "bias_k": -6.216799736022949,
+    "p95_absolute_error_k": 33.78586196899414,
+    "max_absolute_error_k": 39.23876190185547,
+    "n_windows": 58220
+  },
+  "test_metrics": {
+    "mae_k": 2.499783754348755,
+    "rmse_k": 6.967931040723728,
+    "r2": 0.3390333652496338,
+    "bias_k": -1.7324436902999878,
+    "p95_absolute_error_k": 12.224433898925781,
+    "max_absolute_error_k": 39.73748779296875,
+    "n_windows": 3288
+  },
+  "training_rows": 157880,
+  "validation_rows": 59400,
+  "test_rows": 3406
+}

@@ -1,0 +1,72 @@
+{
+  "experiment": "selected_plus_g_thermal",
+  "removed_group": null,
+  "added_groups": [
+    "g_network_rebuilt",
+    "g_thermal_rebuilt"
+  ],
+  "seed": 42,
+  "look_back": 60,
+  "predict_steps": 60,
+  "target": "TE8353",
+  "test_evaluated": false,
+  "test_file": null,
+  "feature_count": 34,
+  "feature_columns": [
+    "TE8353",
+    "TE8308 ValueY",
+    "TE8309 ValueY",
+    "TE8310 ValueY",
+    "TE8351 ValueY",
+    "TE8352 ValueY",
+    "A管 ValueY",
+    "B管 ValueY",
+    "FT8351 ValueY",
+    "PT8310 ValueY",
+    "PT8351 ValueY",
+    "PT8352 ValueY",
+    "PT8390 ValueY",
+    "PT8391 ValueY",
+    "CV8359 ValueY",
+    "CV8350 ValueY",
+    "CV8330 ValueY",
+    "CV8339 ValueY",
+    "Thv ValueY",
+    "DTbr ValueY",
+    "Tef ValueY",
+    "Tcd ValueY",
+    "CV8300 ValueY",
+    "CV8313 ValueY",
+    "CV8310 ValueY",
+    "CV8351 ValueY",
+    "CV8312 ValueY",
+    "CV8311 ValueY",
+    "CV8310_diff",
+    "TE8353_TE8310_diff",
+    "G_inlet_opening_proxy",
+    "G_mix_conductance_proxy",
+    "G_screen_conductance_proxy",
+    "G_mix_thermal_drive"
+  ],
+  "train_source_groups": [
+    "HTC8300趋势图-F-0118.csv",
+    "HTC8300趋势图-F-0403.csv"
+  ],
+  "validation_source_groups": [
+    "HTC8300趋势图-F-0501.csv"
+  ],
+  "test_source_groups": [],
+  "validation_metrics": {
+    "mae_k": 13.077987670898438,
+    "rmse_k": 18.321710867474362,
+    "r2": -2.653574228286743,
+    "bias_k": -12.958333015441895,
+    "p95_absolute_error_k": 35.87312698364258,
+    "max_absolute_error_k": 38.85498809814453,
+    "n_windows": 58220
+  },
+  "test_metrics": null,
+  "training_rows": 157880,
+  "validation_rows": 59400,
+  "test_rows": 0
+}

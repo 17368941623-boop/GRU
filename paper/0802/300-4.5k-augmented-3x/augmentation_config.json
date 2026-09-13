@@ -1,0 +1,26 @@
+{
+  "base_seed": 20260802,
+  "copies_per_parent": 3,
+  "augmented_variants_per_parent": 2,
+  "common_shift_range_k": [
+    -0.1,
+    0.1
+  ],
+  "sensor_shift_range_k": [
+    -0.1,
+    0.1
+  ],
+  "common_drift_amplitude_k": 0.025,
+  "sensor_drift_amplitude_k": 0.025,
+  "drift_window_steps": 60,
+  "noise_std_bounds_k": [
+    0.005,
+    0.05
+  ],
+  "excluded_temperature_signals": [
+    "A管",
+    "B管"
+  ],
+  "pressure_flow_valve_augmentation": false,
+  "split_or_label_generation": false
+}

@@ -1,0 +1,30 @@
+{
+  "mode": "review",
+  "input_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0802\\300-4.5k-augmented-3x",
+  "reviewed_file_rule": "Original__*.csv only",
+  "reviewed_files": 10,
+  "temperature_candidates": [
+    "causal_fill_only",
+    "causal_median_3",
+    "causal_ewma_20s"
+  ],
+  "pressure_flow_candidates": [
+    "causal_fill_only",
+    "causal_median_3",
+    "causal_ewma_20s",
+    "causal_ewma_40s",
+    "causal_ewma_60s"
+  ],
+  "max_ffill_steps": 6,
+  "event_windows_per_file": 2,
+  "event_radius_samples": 180,
+  "plots_requested": true,
+  "plots_generated": true,
+  "causal_only": true,
+  "backward_fill": false,
+  "centered_filter": false,
+  "valve_filtering": false,
+  "valve_zero_is_valid": true,
+  "data_split": false,
+  "label_creation": false
+}

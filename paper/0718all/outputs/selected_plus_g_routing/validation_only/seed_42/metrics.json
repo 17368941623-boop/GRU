@@ -1,0 +1,68 @@
+{
+  "experiment": "selected_plus_g_routing",
+  "removed_group": null,
+  "added_groups": [
+    "g_routing_rebuilt"
+  ],
+  "seed": 42,
+  "look_back": 60,
+  "predict_steps": 60,
+  "target": "TE8353",
+  "test_evaluated": false,
+  "test_file": null,
+  "feature_count": 31,
+  "feature_columns": [
+    "TE8353",
+    "TE8308 ValueY",
+    "TE8309 ValueY",
+    "TE8310 ValueY",
+    "TE8351 ValueY",
+    "TE8352 ValueY",
+    "A管 ValueY",
+    "B管 ValueY",
+    "FT8351 ValueY",
+    "PT8310 ValueY",
+    "PT8351 ValueY",
+    "PT8352 ValueY",
+    "PT8390 ValueY",
+    "PT8391 ValueY",
+    "CV8359 ValueY",
+    "CV8350 ValueY",
+    "CV8330 ValueY",
+    "CV8339 ValueY",
+    "Thv ValueY",
+    "DTbr ValueY",
+    "Tef ValueY",
+    "Tcd ValueY",
+    "CV8300 ValueY",
+    "CV8313 ValueY",
+    "CV8310 ValueY",
+    "CV8351 ValueY",
+    "CV8312 ValueY",
+    "CV8311 ValueY",
+    "CV8310_diff",
+    "TE8353_TE8310_diff",
+    "G_mix_routing_fraction"
+  ],
+  "train_source_groups": [
+    "HTC8300趋势图-F-0118.csv",
+    "HTC8300趋势图-F-0403.csv"
+  ],
+  "validation_source_groups": [
+    "HTC8300趋势图-F-0501.csv"
+  ],
+  "test_source_groups": [],
+  "validation_metrics": {
+    "mae_k": 3.818608045578003,
+    "rmse_k": 4.940973532807507,
+    "r2": 0.7342881560325623,
+    "bias_k": -3.288593292236328,
+    "p95_absolute_error_k": 8.973489761352539,
+    "max_absolute_error_k": 27.825368881225586,
+    "n_windows": 58220
+  },
+  "test_metrics": null,
+  "training_rows": 157880,
+  "validation_rows": 59400,
+  "test_rows": 0
+}

@@ -1,0 +1,68 @@
+{
+  "input_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0802\\filtered_data",
+  "output_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0802\\processed_data",
+  "target": "TE8353",
+  "future_label": "Future_Target_60step",
+  "thv_future_label_created": false,
+  "look_back": 60,
+  "predict_steps": 60,
+  "validation_parent": "260118",
+  "validation_variant": "Original only",
+  "test_parent": "260715",
+  "test_variant": "Original only",
+  "back_policy": "all BACK parents and variants are training only",
+  "training_augmentation_policy": "Original + Aug_01 + Aug_02 for training parents",
+  "raw_signal_columns": [
+    "TE8310",
+    "TE8351",
+    "TE8352",
+    "FT8351",
+    "PT8310",
+    "PT8351",
+    "PT8352",
+    "CV8312",
+    "CV8311",
+    "CV8310",
+    "CV8313",
+    "CV8300",
+    "CV8351",
+    "Thv",
+    "TE8353",
+    "Tef",
+    "Tcd",
+    "DTbr"
+  ],
+  "engineered_columns": [
+    "CV8310_diff",
+    "CV8310_ratio",
+    "TE8353_TE8310_diff",
+    "valve_event_mask"
+  ],
+  "metadata_columns": [
+    "file_id",
+    "source_group",
+    "source_variant",
+    "parent_id",
+    "source_row_index"
+  ],
+  "scaler_fitting": "not performed here; training script fits train_clean.pkl only",
+  "additional_filtering": false,
+  "backward_fill": false,
+  "future_event_neighborhood": false,
+  "flypoint_strategy": "all repaired input rows are removed and segment boundaries are created; TE8353 repaired-label origins are also removed",
+  "flypoint_exclusion_events_in_manifest": 231,
+  "flypoint_exclusion_events_in_used_files": 201,
+  "flypoint_exclusion_rows_in_used_files": 204,
+  "dynamic_test": {
+    "block_steps": 300,
+    "selected_fraction": 0.35,
+    "minimum_blocks": 3,
+    "selection_signal": "causal six-valve event mask only"
+  },
+  "pickle_writers": {
+    "train_clean.pkl": "joblib",
+    "val_clean.pkl": "joblib",
+    "test_clean.pkl": "joblib",
+    "test_full_clean.pkl": "joblib"
+  }
+}

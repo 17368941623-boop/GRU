@@ -1,0 +1,22 @@
+{
+  "study": "tcn",
+  "lookback": 65,
+  "common_origin_lookback": 120,
+  "predict_steps": 15,
+  "complete_runs": 5,
+  "models": [
+    "tcn_baseline"
+  ],
+  "seeds": [
+    42,
+    62,
+    82,
+    102,
+    122
+  ],
+  "test_data_read": false,
+  "selection_metric": "mean Original 260501 rapid-cooling validation RMSE",
+  "uncertainty": "two-sided 95% Student-t CI across random seeds",
+  "paired_effect_test": null,
+  "important_scope": "seed variability on one fixed validation split; not independent physical-run generalization"
+}

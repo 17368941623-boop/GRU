@@ -1,0 +1,26 @@
+{
+  "status": "provisionally_frozen",
+  "primary_metric": "validation_mae_k",
+  "winning_experiment": "selected_plus_rebuilt_physics",
+  "prediction_steps": 60,
+  "seeds_used_for_screening": [42, 62, 82],
+  "validation_summary": {
+    "mae_k_mean": 1.155192,
+    "mae_k_std": 0.136325,
+    "rmse_k_mean": 3.074698,
+    "rmse_k_std": 0.187106,
+    "r2_mean": 0.896852,
+    "r2_std": 0.012486,
+    "bias_k_mean": -0.377750,
+    "bias_k_std": 0.087146,
+    "p95_absolute_error_k_mean": 2.454898,
+    "p95_absolute_error_k_std": 0.038618
+  },
+  "comparison_experiment": "selected_plus_8351_transport",
+  "comparison_validation_mae_k_mean": 1.382059,
+  "notes": [
+    "The winner has lower MAE, absolute bias, and P95 error for all three screening seeds.",
+    "RMSE is slightly worse on two of three seeds, so this trade-off must be reported.",
+    "No held-out test set was read during this decision."
+  ]
+}

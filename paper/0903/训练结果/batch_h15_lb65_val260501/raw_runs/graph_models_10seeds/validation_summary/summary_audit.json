@@ -1,0 +1,30 @@
+{
+  "study": "graph",
+  "lookback": 65,
+  "common_origin_lookback": 120,
+  "predict_steps": 15,
+  "complete_runs": 40,
+  "models": [
+    "parallel_gru_kan_gnn",
+    "parallel_gru_mlp_gnn",
+    "serial_kan_gnn_gru",
+    "serial_mlp_gnn_gru"
+  ],
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "test_data_read": false,
+  "selection_metric": "mean Original 260501 rapid-cooling validation RMSE",
+  "uncertainty": "two-sided 95% Student-t CI across random seeds",
+  "paired_effect_test": "two-sided Wilcoxon signed-rank with Holm correction",
+  "important_scope": "seed variability on one fixed validation split; not independent physical-run generalization"
+}

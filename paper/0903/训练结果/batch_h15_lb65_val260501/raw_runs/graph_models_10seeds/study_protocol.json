@@ -1,0 +1,62 @@
+{
+  "study": "graph",
+  "target": "Delta Thv at t+15; restored absolute Thv is used for metrics",
+  "lookback": 65,
+  "common_origin_lookback": 120,
+  "predict_steps": 15,
+  "history_input": "measurements and controls through current time t",
+  "known_future_control_input": "valve commands u(t) through u(t+14)",
+  "future_measurements_used": false,
+  "scaler_fit_split": "train_clean.pkl only",
+  "checkpoint_selection_split": "Original 260501 validation only",
+  "held_out_test_data_read": false,
+  "checkpoint_selection_metric": "rapid-cooling validation RMSE",
+  "rapid_loss": "training-only 10th-percentile threshold; weight 3 Huber loss",
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "models": [
+    {
+      "model": "parallel_gru_mlp_gnn",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "role": "parallel topology with unconstrained MLP edge gates"
+    },
+    {
+      "model": "parallel_gru_kan_gnn",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "role": "parallel topology with monotonic KAN valve gates"
+    },
+    {
+      "model": "serial_mlp_gnn_gru",
+      "config_id": "controlled_hh64_gh64_gs2_mlp",
+      "role": "serial topology with unconstrained MLP edge gates"
+    },
+    {
+      "model": "serial_kan_gnn_gru",
+      "config_id": "controlled_hh64_gh64_gs2_kan8",
+      "role": "serial topology with monotonic KAN valve gates"
+    }
+  ],
+  "common_model_config": {
+    "history_hidden": 64,
+    "graph_hidden": 64,
+    "graph_sweeps": 2,
+    "edge_hidden": 32,
+    "kan_grid": 8,
+    "tcn_levels": 6,
+    "tcn_kernel": 3,
+    "control_hidden": 32,
+    "fusion_hidden": 64,
+    "dropout": 0.1
+  },
+  "expected_runs": 40
+}

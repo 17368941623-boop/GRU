@@ -1,0 +1,123 @@
+{
+  "audit_status": "PASS",
+  "total_complete_runs": 65,
+  "lookback": 65,
+  "common_origin_lookback": 120,
+  "predict_steps": 15,
+  "validation_split": "Original 260501",
+  "held_out_split_read": false,
+  "validation_windows_per_run": 25600,
+  "rapid_validation_windows_per_run": 1596,
+  "rapid_fraction": 0.06234375,
+  "rapid_threshold_k_train_only": -0.585602093572,
+  "rapid_definition": "actual Thv(t+15)-Thv(t) <= training-only 10th-percentile threshold",
+  "models": {
+    "gru_baseline": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    },
+    "lstm_baseline": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    },
+    "tcn_baseline": {
+      "n_runs": 5,
+      "seeds": [
+        42,
+        62,
+        82,
+        102,
+        122
+      ],
+      "test_data_loaded": false
+    },
+    "serial_mlp_gnn_gru": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    },
+    "serial_kan_gnn_gru": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    },
+    "parallel_gru_mlp_gnn": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    },
+    "parallel_gru_kan_gnn": {
+      "n_runs": 10,
+      "seeds": [
+        42,
+        52,
+        62,
+        72,
+        82,
+        92,
+        102,
+        112,
+        122,
+        132
+      ],
+      "test_data_loaded": false
+    }
+  }
+}

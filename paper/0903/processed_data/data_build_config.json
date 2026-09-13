@@ -1,0 +1,126 @@
+{
+  "input_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0822\\filtered_data",
+  "output_dir": "C:\\Users\\Administrator\\Desktop\\论文20260708\\0822\\processed_data",
+  "targets": [
+    "TE8353",
+    "Thv"
+  ],
+  "horizons": [
+    5,
+    10,
+    15,
+    20,
+    30
+  ],
+  "future_labels": [
+    "Future_TE8353_5step",
+    "Future_TE8353_10step",
+    "Future_TE8353_15step",
+    "Future_TE8353_20step",
+    "Future_TE8353_30step",
+    "Future_Thv_5step",
+    "Future_Thv_10step",
+    "Future_Thv_15step",
+    "Future_Thv_20step",
+    "Future_Thv_30step"
+  ],
+  "look_back": 60,
+  "sample_period_seconds": 10.0,
+  "validation_parent": "260501",
+  "validation_variant": "Original only",
+  "test_parent": "0715-BACK",
+  "test_variant": "Original only",
+  "training_augmentation_policy": "Original+Aug_01+Aug_02 kept with each training parent",
+  "back_policy": "0623-BACK is training only; 0715-BACK is the held-out test (Original only)",
+  "raw_signal_columns": [
+    "TE8310",
+    "TE8351",
+    "TE8352",
+    "FT8351",
+    "PT8310",
+    "PT8351",
+    "PT8352",
+    "CV8312",
+    "CV8311",
+    "CV8310",
+    "CV8313",
+    "CV8300",
+    "CV8351",
+    "Thv",
+    "TE8353",
+    "Tef",
+    "Tcd",
+    "DTbr",
+    "EC-V2",
+    "COOLDOWN"
+  ],
+  "optional_module_valve_columns": [
+    "EC-V2",
+    "COOLDOWN"
+  ],
+  "technical_availability_masks": [
+    "EC_V2_available_mask",
+    "COOLDOWN_available_mask"
+  ],
+  "engineered_columns": [
+    "TE8353_diff_1",
+    "TE8353_history_slope_k_per_min_60points",
+    "Thv_diff_1",
+    "Thv_history_slope_k_per_min_60points",
+    "G1_main_flow_command_proxy",
+    "G2_main_flow_command_proxy",
+    "G1_to_postmix_thermal_drive_proxy",
+    "G2_to_postmix_thermal_drive_proxy",
+    "A_to_postmix_thermal_drive_proxy",
+    "CV8351_diff_1",
+    "PostMix_specific_cooling_300K_ref_J_kg",
+    "PostMix_cooling_rate_300K_ref_W",
+    "Mainline_dT_8351_8352",
+    "Mainline_dT_8352_8353",
+    "Mainline_dP_8351_8352_bar",
+    "Module_dT_Thv_TE8353",
+    "Module_flow_temperature_drive_proxy",
+    "Module_dT_Thv_TE8310",
+    "EC_V2_diff_1",
+    "COOLDOWN_diff_1",
+    "Mainline_apparent_heat_leak_8351_8352_W",
+    "Mainline_apparent_heat_leak_8352_8353_W",
+    "valve_event_mask"
+  ],
+  "metadata_columns": [
+    "file_id",
+    "source_group",
+    "source_variant",
+    "parent_id",
+    "source_row_index",
+    "source_timestamp"
+  ],
+  "scaler_fitting": "not performed here; training scripts fit train_clean.pkl only",
+  "future_features_used": false,
+  "random_row_split": false,
+  "flypoint_policy": "repaired rows are removed; preceding origins whose maximum-horizon path crosses an excluded/missing state are also removed; segments never cross those gaps",
+  "thermophysical_properties": {
+    "library": "CoolProp",
+    "runtime_version": "8.0.0",
+    "recommended_version": "8.0.0",
+    "fluid": "HEOS::Helium",
+    "temperature_unit": "K",
+    "pressure_source_unit": "bar",
+    "mass_flow_source_unit": "g/s",
+    "enthalpy_unit": "J/kg",
+    "power_unit": "W"
+  },
+  "dynamic_test": {
+    "block_steps": 300,
+    "selected_fraction": 0.35,
+    "minimum_blocks": 3,
+    "selection_signal": "causal event mask from six process valves plus available EC-V2/COOLDOWN"
+  },
+  "pickle_writers": {
+    "train_clean.pkl": "joblib",
+    "val_clean.pkl": "joblib",
+    "test_clean.pkl": "joblib",
+    "test_full_clean.pkl": "joblib"
+  },
+  "flypoint_manifest_events": 171
+}
