@@ -1,0 +1,42 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "checkpoint_selection_split": "Original 260501 validation",
+  "evaluation_split": "Original 0715-BACK full test",
+  "test_set_used_for_lookback_plot": true,
+  "methodological_consequence": "Because all lookbacks are compared on this test run, 0715-BACK is now a post-hoc model-selection/evaluation set rather than an untouched final holdout.",
+  "lookbacks": [
+    15,
+    30,
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    90,
+    120
+  ],
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "predict_steps": 15,
+  "common_origin_lookback": 120,
+  "test_windows_per_run": 10659,
+  "model_runs": 120,
+  "numerical_minimum_lookback": 60,
+  "numerical_minimum_test_full_rmse_mean_k": 1.1802776646348039,
+  "summary_csv": "lookback_test_summary.csv",
+  "all_runs_csv": "lookback_test_all_runs.csv"
+}

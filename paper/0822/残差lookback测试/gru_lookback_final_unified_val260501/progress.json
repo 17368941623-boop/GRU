@@ -1,0 +1,518 @@
+{
+  "updated_at": "2026-09-02T12:58:56+08:00",
+  "started_at": "2026-09-02T00:29:35+08:00",
+  "status": "complete",
+  "lookbacks": [
+    15,
+    30,
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    90,
+    120
+  ],
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82,
+    92,
+    102,
+    112,
+    122,
+    132
+  ],
+  "total_runs": 120,
+  "completed_runs": 120,
+  "pending_runs": 0,
+  "current_run": null,
+  "completed_pairs": [
+    {
+      "lookback": 15,
+      "seed": 42
+    },
+    {
+      "lookback": 15,
+      "seed": 52
+    },
+    {
+      "lookback": 15,
+      "seed": 62
+    },
+    {
+      "lookback": 15,
+      "seed": 72
+    },
+    {
+      "lookback": 15,
+      "seed": 82
+    },
+    {
+      "lookback": 15,
+      "seed": 92
+    },
+    {
+      "lookback": 15,
+      "seed": 102
+    },
+    {
+      "lookback": 15,
+      "seed": 112
+    },
+    {
+      "lookback": 15,
+      "seed": 122
+    },
+    {
+      "lookback": 15,
+      "seed": 132
+    },
+    {
+      "lookback": 30,
+      "seed": 42
+    },
+    {
+      "lookback": 30,
+      "seed": 52
+    },
+    {
+      "lookback": 30,
+      "seed": 62
+    },
+    {
+      "lookback": 30,
+      "seed": 72
+    },
+    {
+      "lookback": 30,
+      "seed": 82
+    },
+    {
+      "lookback": 30,
+      "seed": 92
+    },
+    {
+      "lookback": 30,
+      "seed": 102
+    },
+    {
+      "lookback": 30,
+      "seed": 112
+    },
+    {
+      "lookback": 30,
+      "seed": 122
+    },
+    {
+      "lookback": 30,
+      "seed": 132
+    },
+    {
+      "lookback": 40,
+      "seed": 42
+    },
+    {
+      "lookback": 40,
+      "seed": 52
+    },
+    {
+      "lookback": 40,
+      "seed": 62
+    },
+    {
+      "lookback": 40,
+      "seed": 72
+    },
+    {
+      "lookback": 40,
+      "seed": 82
+    },
+    {
+      "lookback": 40,
+      "seed": 92
+    },
+    {
+      "lookback": 40,
+      "seed": 102
+    },
+    {
+      "lookback": 40,
+      "seed": 112
+    },
+    {
+      "lookback": 40,
+      "seed": 122
+    },
+    {
+      "lookback": 40,
+      "seed": 132
+    },
+    {
+      "lookback": 45,
+      "seed": 42
+    },
+    {
+      "lookback": 45,
+      "seed": 52
+    },
+    {
+      "lookback": 45,
+      "seed": 62
+    },
+    {
+      "lookback": 45,
+      "seed": 72
+    },
+    {
+      "lookback": 45,
+      "seed": 82
+    },
+    {
+      "lookback": 45,
+      "seed": 92
+    },
+    {
+      "lookback": 45,
+      "seed": 102
+    },
+    {
+      "lookback": 45,
+      "seed": 112
+    },
+    {
+      "lookback": 45,
+      "seed": 122
+    },
+    {
+      "lookback": 45,
+      "seed": 132
+    },
+    {
+      "lookback": 50,
+      "seed": 42
+    },
+    {
+      "lookback": 50,
+      "seed": 52
+    },
+    {
+      "lookback": 50,
+      "seed": 62
+    },
+    {
+      "lookback": 50,
+      "seed": 72
+    },
+    {
+      "lookback": 50,
+      "seed": 82
+    },
+    {
+      "lookback": 50,
+      "seed": 92
+    },
+    {
+      "lookback": 50,
+      "seed": 102
+    },
+    {
+      "lookback": 50,
+      "seed": 112
+    },
+    {
+      "lookback": 50,
+      "seed": 122
+    },
+    {
+      "lookback": 50,
+      "seed": 132
+    },
+    {
+      "lookback": 55,
+      "seed": 42
+    },
+    {
+      "lookback": 55,
+      "seed": 52
+    },
+    {
+      "lookback": 55,
+      "seed": 62
+    },
+    {
+      "lookback": 55,
+      "seed": 72
+    },
+    {
+      "lookback": 55,
+      "seed": 82
+    },
+    {
+      "lookback": 55,
+      "seed": 92
+    },
+    {
+      "lookback": 55,
+      "seed": 102
+    },
+    {
+      "lookback": 55,
+      "seed": 112
+    },
+    {
+      "lookback": 55,
+      "seed": 122
+    },
+    {
+      "lookback": 55,
+      "seed": 132
+    },
+    {
+      "lookback": 60,
+      "seed": 42
+    },
+    {
+      "lookback": 60,
+      "seed": 52
+    },
+    {
+      "lookback": 60,
+      "seed": 62
+    },
+    {
+      "lookback": 60,
+      "seed": 72
+    },
+    {
+      "lookback": 60,
+      "seed": 82
+    },
+    {
+      "lookback": 60,
+      "seed": 92
+    },
+    {
+      "lookback": 60,
+      "seed": 102
+    },
+    {
+      "lookback": 60,
+      "seed": 112
+    },
+    {
+      "lookback": 60,
+      "seed": 122
+    },
+    {
+      "lookback": 60,
+      "seed": 132
+    },
+    {
+      "lookback": 65,
+      "seed": 42
+    },
+    {
+      "lookback": 65,
+      "seed": 52
+    },
+    {
+      "lookback": 65,
+      "seed": 62
+    },
+    {
+      "lookback": 65,
+      "seed": 72
+    },
+    {
+      "lookback": 65,
+      "seed": 82
+    },
+    {
+      "lookback": 65,
+      "seed": 92
+    },
+    {
+      "lookback": 65,
+      "seed": 102
+    },
+    {
+      "lookback": 65,
+      "seed": 112
+    },
+    {
+      "lookback": 65,
+      "seed": 122
+    },
+    {
+      "lookback": 65,
+      "seed": 132
+    },
+    {
+      "lookback": 70,
+      "seed": 42
+    },
+    {
+      "lookback": 70,
+      "seed": 52
+    },
+    {
+      "lookback": 70,
+      "seed": 62
+    },
+    {
+      "lookback": 70,
+      "seed": 72
+    },
+    {
+      "lookback": 70,
+      "seed": 82
+    },
+    {
+      "lookback": 70,
+      "seed": 92
+    },
+    {
+      "lookback": 70,
+      "seed": 102
+    },
+    {
+      "lookback": 70,
+      "seed": 112
+    },
+    {
+      "lookback": 70,
+      "seed": 122
+    },
+    {
+      "lookback": 70,
+      "seed": 132
+    },
+    {
+      "lookback": 75,
+      "seed": 42
+    },
+    {
+      "lookback": 75,
+      "seed": 52
+    },
+    {
+      "lookback": 75,
+      "seed": 62
+    },
+    {
+      "lookback": 75,
+      "seed": 72
+    },
+    {
+      "lookback": 75,
+      "seed": 82
+    },
+    {
+      "lookback": 75,
+      "seed": 92
+    },
+    {
+      "lookback": 75,
+      "seed": 102
+    },
+    {
+      "lookback": 75,
+      "seed": 112
+    },
+    {
+      "lookback": 75,
+      "seed": 122
+    },
+    {
+      "lookback": 75,
+      "seed": 132
+    },
+    {
+      "lookback": 90,
+      "seed": 42
+    },
+    {
+      "lookback": 90,
+      "seed": 52
+    },
+    {
+      "lookback": 90,
+      "seed": 62
+    },
+    {
+      "lookback": 90,
+      "seed": 72
+    },
+    {
+      "lookback": 90,
+      "seed": 82
+    },
+    {
+      "lookback": 90,
+      "seed": 92
+    },
+    {
+      "lookback": 90,
+      "seed": 102
+    },
+    {
+      "lookback": 90,
+      "seed": 112
+    },
+    {
+      "lookback": 90,
+      "seed": 122
+    },
+    {
+      "lookback": 90,
+      "seed": 132
+    },
+    {
+      "lookback": 120,
+      "seed": 42
+    },
+    {
+      "lookback": 120,
+      "seed": 52
+    },
+    {
+      "lookback": 120,
+      "seed": 62
+    },
+    {
+      "lookback": 120,
+      "seed": 72
+    },
+    {
+      "lookback": 120,
+      "seed": 82
+    },
+    {
+      "lookback": 120,
+      "seed": 92
+    },
+    {
+      "lookback": 120,
+      "seed": 102
+    },
+    {
+      "lookback": 120,
+      "seed": 112
+    },
+    {
+      "lookback": 120,
+      "seed": 122
+    },
+    {
+      "lookback": 120,
+      "seed": 132
+    }
+  ],
+  "pending_pairs": []
+}
