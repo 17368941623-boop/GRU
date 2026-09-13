@@ -1,0 +1,21 @@
+{
+  "core_conclusion": "Target-history dynamics provide the clearest cross-architecture gain; additional cumulative features do not yield monotonic improvement.",
+  "evidence_role": "architecture comparison and cumulative feature-integration robustness",
+  "archetype": "single-panel quantitative grid",
+  "split": "complete Original 260501 validation sequence",
+  "metric": "absolute Thv(t+15) RMSE after restoring the predicted temperature increment",
+  "independent_repeat_unit": "random initialization seed",
+  "n_seeds_per_cell": 5,
+  "seed_set": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "cell_annotation_absolute": "mean ± sample SD across paired seeds",
+  "relative_reference": "the raw-measurement configuration within the same architecture",
+  "missing_or_excluded_cells": 0,
+  "interpretation_limit": "The cumulative sequence was fixed before analysis. Later rows retain all earlier groups, so this figure does not identify order-independent effects of individual groups.",
+  "test_set_used": false
+}

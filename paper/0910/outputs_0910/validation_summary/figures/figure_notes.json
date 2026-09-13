@@ -1,0 +1,26 @@
+{
+  "core_conclusion": "The figure tests whether progressively introduced physical information produces consistent validation changes across three model architectures.",
+  "evidence_role": "model-by-feature comparison and robustness across architectures",
+  "archetype": "single-panel quantitative grid",
+  "data_source": "validation_seed_runs.csv and derived mean/SD matrices",
+  "split": "complete Original 260501 validation sequence",
+  "metric": "absolute Thv(t+15) RMSE in kelvin after restoring the predicted delta",
+  "center": "arithmetic mean across paired seeds",
+  "spread": "sample SD is retained in validation_rmse_sd_matrix.csv",
+  "n_seeds": 5,
+  "seed_set": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "missing_or_excluded_cells": 0,
+  "interpretation_warning": "Rows are cumulative and order-dependent. The heatmap does not establish standalone causal importance for an individual feature group.",
+  "exports": [
+    "SVG",
+    "PDF",
+    "600-dpi PNG",
+    "600-dpi TIFF"
+  ]
+}
