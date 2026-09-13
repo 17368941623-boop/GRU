@@ -1,0 +1,48 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "parallel_gru_kan_gnn",
+    "feature_set": "full22_with_apparent_heat_leak",
+    "feature_set_label": "All 20 recommended plus two apparent heat-leak features",
+    "feature_set_role": "optional CoolProp apparent-enthalpy-gain check",
+    "removed_feature_group": null,
+    "seed": 132,
+    "active_engineered_count": 22,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 0.9728392557767074,
+    "test_full_mae_k": 0.20997443002138,
+    "test_full_p95_absolute_error_k": 1.1150781354093773,
+    "test_full_max_absolute_error_k": 20.749099958806518,
+    "test_full_bias_k": 0.02723923689394764,
+    "test_full_r2": 0.9985373814020616,
+    "test_direction_accuracy": 0.6707008162116521,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.21571356174530443,
+    "trainable_parameters": 91417,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.20997443002138,
+    "rmse_k": 0.9728392557767074,
+    "p95_absolute_error_k": 1.1150781354093773,
+    "max_absolute_error_k": 20.749099958806518,
+    "bias_k": 0.02723923689394764,
+    "r2": 0.9985373814020616,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

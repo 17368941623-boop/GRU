@@ -1,0 +1,48 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "parallel_gru_kan_gnn",
+    "feature_set": "full20_no_premix_postmix_thermal_drive",
+    "feature_set_label": "All recommended except premix_postmix_thermal_drive",
+    "feature_set_role": "leave-one-physical-group-out: premix_postmix_thermal_drive",
+    "removed_feature_group": "premix_postmix_thermal_drive",
+    "seed": 122,
+    "active_engineered_count": 16,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 1.0772261354523147,
+    "test_full_mae_k": 0.22324061896861142,
+    "test_full_p95_absolute_error_k": 0.971319234865499,
+    "test_full_max_absolute_error_k": 24.998131169426884,
+    "test_full_bias_k": -0.007533743247263806,
+    "test_full_r2": 0.9982066598117415,
+    "test_direction_accuracy": 0.5849516840228914,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.22527694119134917,
+    "trainable_parameters": 91417,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.22324061896861142,
+    "rmse_k": 1.0772261354523147,
+    "p95_absolute_error_k": 0.971319234865499,
+    "max_absolute_error_k": 24.998131169426884,
+    "bias_k": -0.007533743247263806,
+    "r2": 0.9982066598117415,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

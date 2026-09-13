@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "shard_index": 1,
+  "num_shards": 5,
+  "completed_in_shard": 20,
+  "total_in_shard": 20,
+  "elapsed_seconds": 30943.516402721405,
+  "current_run": null,
+  "test_data_read": false
+}

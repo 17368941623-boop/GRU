@@ -1,0 +1,48 @@
+{
+  "evaluation_type": "frozen-checkpoint inference on complete test sequence",
+  "training_or_weight_updates": false,
+  "test_parent": "0715-BACK",
+  "test_variant": "Original",
+  "summary_row": {
+    "model": "parallel_gru_kan_gnn",
+    "feature_set": "full20_no_target_history_dynamics",
+    "feature_set_label": "All recommended except target_history_dynamics",
+    "feature_set_role": "leave-one-physical-group-out: target_history_dynamics",
+    "removed_feature_group": "target_history_dynamics",
+    "seed": 82,
+    "active_engineered_count": 16,
+    "lookback": 60,
+    "common_origin_lookback": 120,
+    "predict_steps": 15,
+    "test_full_rmse_k": 0.9869232830834751,
+    "test_full_mae_k": 0.2596062949078577,
+    "test_full_p95_absolute_error_k": 1.2810707499925533,
+    "test_full_max_absolute_error_k": 20.75631476399188,
+    "test_full_bias_k": -0.0056181470002834065,
+    "test_full_r2": 0.9984947254904346,
+    "test_direction_accuracy": 0.5431091096725772,
+    "test_windows": 10659,
+    "persistence_test_rmse_k": 1.9780479142129992,
+    "validation_rmse_k": 0.22736863540884697,
+    "trainable_parameters": 91417,
+    "checkpoint_selection_metric": "validation_rmse_k"
+  },
+  "full_test_metrics": {
+    "mae_k": 0.2596062949078577,
+    "rmse_k": 0.9869232830834751,
+    "p95_absolute_error_k": 1.2810707499925533,
+    "max_absolute_error_k": 20.75631476399188,
+    "bias_k": -0.0056181470002834065,
+    "r2": 0.9984947254904346,
+    "n_windows": 10659
+  },
+  "persistence_test_metrics": {
+    "mae_k": 0.544091266050341,
+    "rmse_k": 1.9780479142129992,
+    "p95_absolute_error_k": 3.8928535461425864,
+    "max_absolute_error_k": 34.619674205779994,
+    "bias_k": -0.00181369296559831,
+    "r2": 0.9939532427731714,
+    "n_windows": 10659
+  }
+}

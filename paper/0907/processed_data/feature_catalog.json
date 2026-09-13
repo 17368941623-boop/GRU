@@ -1,0 +1,222 @@
+{
+  "policy": "all causal raw/engineered candidates are materialized in one table; separate TE8353 and Thv training runs choose feature groups and one future label",
+  "raw_signal_columns": [
+    "TE8310",
+    "TE8351",
+    "TE8352",
+    "FT8351",
+    "PT8310",
+    "PT8351",
+    "PT8352",
+    "CV8312",
+    "CV8311",
+    "CV8310",
+    "CV8313",
+    "CV8300",
+    "CV8351",
+    "Thv",
+    "TE8353",
+    "Tef",
+    "Tcd",
+    "DTbr",
+    "EC-V2",
+    "COOLDOWN"
+  ],
+  "technical_availability_masks": [
+    "EC_V2_available_mask",
+    "COOLDOWN_available_mask"
+  ],
+  "feature_groups": {
+    "target_history_dynamics": [
+      "TE8353_diff_1",
+      "TE8353_history_slope_k_per_min_60points",
+      "Thv_diff_1",
+      "Thv_history_slope_k_per_min_60points"
+    ],
+    "g_main_flow_command": [
+      "G1_main_flow_command_proxy",
+      "G2_main_flow_command_proxy"
+    ],
+    "premix_postmix_thermal_drive": [
+      "G1_to_postmix_thermal_drive_proxy",
+      "G2_to_postmix_thermal_drive_proxy",
+      "A_to_postmix_thermal_drive_proxy",
+      "CV8351_diff_1"
+    ],
+    "postmix_cooling_bridge": [
+      "PostMix_specific_cooling_300K_ref_J_kg",
+      "PostMix_cooling_rate_300K_ref_W"
+    ],
+    "mainline_state_contrasts": [
+      "Mainline_dT_8351_8352",
+      "Mainline_dT_8352_8353",
+      "Mainline_dP_8351_8352_bar"
+    ],
+    "thv_module_coupling": [
+      "Module_dT_Thv_TE8353",
+      "Module_flow_temperature_drive_proxy",
+      "Module_dT_Thv_TE8310"
+    ],
+    "module_valve_dynamics": [
+      "EC_V2_diff_1",
+      "COOLDOWN_diff_1"
+    ],
+    "optional_coolprop_apparent_heat_leak": [
+      "Mainline_apparent_heat_leak_8351_8352_W",
+      "Mainline_apparent_heat_leak_8352_8353_W"
+    ],
+    "evaluation_auxiliary": [
+      "valve_event_mask"
+    ]
+  },
+  "recommended_engineered_columns": [
+    "TE8353_diff_1",
+    "TE8353_history_slope_k_per_min_60points",
+    "Thv_diff_1",
+    "Thv_history_slope_k_per_min_60points",
+    "G1_main_flow_command_proxy",
+    "G2_main_flow_command_proxy",
+    "G1_to_postmix_thermal_drive_proxy",
+    "G2_to_postmix_thermal_drive_proxy",
+    "A_to_postmix_thermal_drive_proxy",
+    "CV8351_diff_1",
+    "PostMix_specific_cooling_300K_ref_J_kg",
+    "PostMix_cooling_rate_300K_ref_W",
+    "Mainline_dT_8351_8352",
+    "Mainline_dT_8352_8353",
+    "Mainline_dP_8351_8352_bar",
+    "Module_dT_Thv_TE8353",
+    "Module_flow_temperature_drive_proxy",
+    "Module_dT_Thv_TE8310",
+    "EC_V2_diff_1",
+    "COOLDOWN_diff_1"
+  ],
+  "optional_apparent_heat_leak_columns": [
+    "Mainline_apparent_heat_leak_8351_8352_W",
+    "Mainline_apparent_heat_leak_8352_8353_W"
+  ],
+  "evaluation_only_columns": [
+    "valve_event_mask"
+  ],
+  "feature_definitions": {
+    "TE8353_diff_1": {
+      "formula": "TE8353[t] - TE8353[t-1]",
+      "meaning": "latest observed TE8353 increment"
+    },
+    "TE8353_history_slope_k_per_min_60points": {
+      "formula": "(TE8353[t] - TE8353[t-59]) / (590/60 min)",
+      "meaning": "causal 60-point TE8353 trend; 60 points span 59 ten-second intervals"
+    },
+    "Thv_diff_1": {
+      "formula": "Thv[t] - Thv[t-1]",
+      "meaning": "latest observed module-average-temperature increment"
+    },
+    "Thv_history_slope_k_per_min_60points": {
+      "formula": "(Thv[t] - Thv[t-59]) / (590/60 min)",
+      "meaning": "causal 60-point Thv trend"
+    },
+    "G1_main_flow_command_proxy": {
+      "formula": "series(open(CV8300),open(CV8310))*sqrt(max(PT8310-PT8351,0))",
+      "meaning": "G1 main-line conductance/pressure-drive proxy, not measured mass flow"
+    },
+    "G2_main_flow_command_proxy": {
+      "formula": "series(open(CV8313),open(CV8310))*sqrt(max(PT8310-PT8351,0))",
+      "meaning": "G2 main-line conductance/pressure-drive proxy, not measured mass flow"
+    },
+    "G1_to_postmix_thermal_drive_proxy": {
+      "formula": "G1_main_flow_command_proxy*(TE8351-80 K)",
+      "meaning": "signed nominal G1-to-postmix thermal drive"
+    },
+    "G2_to_postmix_thermal_drive_proxy": {
+      "formula": "G2_main_flow_command_proxy*(TE8351-300 K)",
+      "meaning": "signed nominal G2-to-postmix thermal drive"
+    },
+    "A_to_postmix_thermal_drive_proxy": {
+      "formula": "open(CV8351)*(TE8351-4.6 K)",
+      "meaning": "A-branch command gated by its nominal source/postmix temperature drive"
+    },
+    "CV8351_diff_1": {
+      "formula": "CV8351[t]-CV8351[t-1]",
+      "meaning": "latest A-branch valve action"
+    },
+    "PostMix_specific_cooling_300K_ref_J_kg": {
+      "formula": "h_He(300 K,PT8351)-h_He(TE8351,PT8351)",
+      "meaning": "postmix helium specific cooling content relative to a 300 K reference"
+    },
+    "PostMix_cooling_rate_300K_ref_W": {
+      "formula": "FT8351[kg/s]*PostMix_specific_cooling_300K_ref_J_kg",
+      "meaning": "flow-weighted postmix cooling proxy, not rated refrigerator capacity"
+    },
+    "Mainline_dT_8351_8352": {
+      "formula": "TE8351-TE8352",
+      "meaning": "measured temperature contrast on the first main-line section"
+    },
+    "Mainline_dT_8352_8353": {
+      "formula": "TE8352-TE8353",
+      "meaning": "measured temperature contrast on the second main-line section"
+    },
+    "Mainline_dP_8351_8352_bar": {
+      "formula": "PT8351-PT8352",
+      "meaning": "measured main-line pressure contrast in bar"
+    },
+    "Module_dT_Thv_TE8353": {
+      "formula": "Thv-TE8353",
+      "meaning": "module-average versus module-inlet temperature contrast"
+    },
+    "Module_flow_temperature_drive_proxy": {
+      "formula": "FT8351*(Thv-TE8353)",
+      "meaning": "flow/temperature-drive proxy in g*K/s; not thermal power"
+    },
+    "Module_dT_Thv_TE8310": {
+      "formula": "Thv-TE8310",
+      "meaning": "temperature contrast used by the equipment state machine"
+    },
+    "EC_V2_diff_1": {
+      "formula": "EC-V2[t]-EC-V2[t-1] within an available contiguous sequence",
+      "meaning": "latest EC-V2 action; unavailable values remain missing"
+    },
+    "COOLDOWN_diff_1": {
+      "formula": "COOLDOWN[t]-COOLDOWN[t-1] within an available contiguous sequence",
+      "meaning": "latest COOLDOWN action; Cooldowm is accepted as a source alias"
+    },
+    "Mainline_apparent_heat_leak_8351_8352_W": {
+      "formula": "FT8351[kg/s]*(h(TE8352,PT8352)-h(TE8351,PT8351))",
+      "meaning": "optional transient apparent enthalpy-gain proxy"
+    },
+    "Mainline_apparent_heat_leak_8352_8353_W": {
+      "formula": "FT8351[kg/s]*(h(TE8353,PT8352)-h(TE8352,PT8352))",
+      "meaning": "optional downstream apparent enthalpy-gain proxy using PT8352"
+    },
+    "valve_event_mask": {
+      "formula": "1 when any available primary valve changes more than the threshold",
+      "meaning": "dynamic-test selector only; never a default model input"
+    }
+  },
+  "future_labels": [
+    "Future_TE8353_5step",
+    "Future_TE8353_10step",
+    "Future_TE8353_15step",
+    "Future_TE8353_20step",
+    "Future_TE8353_30step",
+    "Future_Thv_5step",
+    "Future_Thv_10step",
+    "Future_Thv_15step",
+    "Future_Thv_20step",
+    "Future_Thv_30step"
+  ],
+  "future_labels_are_inputs": false,
+  "module_valve_missing_policy": "never fill missing EC-V2/COOLDOWN with zero; use availability masks and apply the same eligible-parent subset to every model in a module-valve ablation",
+  "not_materialized": {
+    "G_screen_diversion_fraction": "removed by the approved feature plan",
+    "FC_V1": "not a module-side input valve and excluded",
+    "target_rolling_mean": "removed after earlier prediction-spike observations",
+    "future_valve_trajectory": "belongs to a later MPC dataset, not this forecasting dataset",
+    "train_fitted_statistics": "scalers/selection/PCA/thresholds must be learned from training only"
+  },
+  "nominal_constants": {
+    "A_inlet_temperature_k": 4.6,
+    "G1_inlet_temperature_k": 80.0,
+    "G2_inlet_temperature_k": 300.0,
+    "cooling_reference_temperature_k": 300.0
+  }
+}
